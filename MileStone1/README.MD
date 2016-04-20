@@ -1,25 +1,9 @@
 #Notes
   1.  file:/// for local file
   2.  if context not set to local, hdfs as default
-#Purple Cow Output
-  a: 1
-  rather: 1
-  purple: 1
-  But: 1
-  I: 2
-  see: 2
-  one.: 1
-  hope: 1 
-  be: 1
-  you,: 1
-  cow.: 1
-  I've: 1
-  never: 2
-  than: 1
-  to: 1
-  I'd: 1
-  can: 1
-  seen: 1
-  one;: 1
-  tell: 1
-  anyhow,: 1
+#Results
+
+  1.  ##Purple Cow Output
+    [purplecow](./purplecow_result.txt) 
+  2.  ##FrostRoad
+    [frostroad](./frostroad_result.txt)
