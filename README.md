@@ -6,6 +6,6 @@
 
 #Routing
 
-1. Seed -- Python modeling & Visulization
-2.Chris -- Scala Preprocessing & Visualization
-3.Mengna -- Machine learning support & Visualization
+1.  Seed -- Python modeling & Visulization
+2.  Chris -- Scala Preprocessing & Visualization
+3.  Mengna -- Machine learning support & Visualization
