@@ -10,7 +10,7 @@
 ##Scripts Lists
   
 ####[PlotlyPractice.py](./PlotlyPractice.py)
-    Practicing how to visualize some GeoData
-  * [GeoVisulization.py(./GeoVisulization.py)
-    *The Visulization of the sample data*
+  Practicing how to visualize some GeoData
+####[GeoVisulization.py](./GeoVisulization.py)
+  The Visulization of the sample data*
   
