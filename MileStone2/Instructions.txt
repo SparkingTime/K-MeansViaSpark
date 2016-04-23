@@ -1,2 +1,5 @@
 $ sudo pip install plotly
 $ python -c "import plotly; plotly.tools.set_credentials_file(username='seedbazzal', api_key='qhesd1icmx')"
+
+GoogleMap API key
+AIzaSyDFylAsuGtwbOgRz-kxGwGqymkQmXXuA90
