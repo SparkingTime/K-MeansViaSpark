@@ -5,7 +5,7 @@
 ##Goals
   * [x] Step1=>Pre-process Practice (on local data)
   * [x] Step2=>Data Visulization
-  * [ ] Step3=>Pre-process the real data
+  * [x] Step3=>Pre-process the real data
   
 ##Scripts Lists
 
@@ -36,5 +36,12 @@
   The python script to visualize sample data*
 ####[step2.png](./step2.png)
   The Visulizaiton result
-  
+
+###Step 3
+
+--------
+
+####[step3.filteredData](./step3.filteredData)
+  The original filtered output from Spark
+####[step3.filteredDataInput](./step3.)
 
