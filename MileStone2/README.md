@@ -40,8 +40,14 @@
 ###Step 3
 
 --------
+####[step3.filter.py](./step3.filter.py)
+  Spark Script to filter the data according to the instructions
+####[step3.Visulization.py](./step3.Visulization.py)
+  Visulization of the filtered result (*Will not work right now due to non-upgraded api key*)
 
+  
 ####[step3.filteredData](./step3.filteredData)
   The original filtered output from Spark
-####[step3.filteredDataInput](./step3.)
+####[step3.filteredInputData](./step3.filteredInputData)
+  CSV and combined version of filtered data
 
