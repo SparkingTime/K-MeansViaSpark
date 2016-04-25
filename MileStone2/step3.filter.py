@@ -15,8 +15,8 @@ def inUnitedStates(array):
         return False
     lat = float(array[0])
     lng = float(array[1])
-    if lat < 49.0 and lat > 18.0 and lng > -124.7 and lng < -62.2:
-        return True
+    if lat < 49.0 and lat > 24.45 and lng > -124.7 and lng < -62.2:
+        return Tru
     return False
 
 def getInfoWanted(array):
