@@ -1,6 +1,6 @@
 import sys
 import argparse
-import googlemaps
+#import googlemaps
 
 from pyspark import SparkContext
 
@@ -15,15 +15,18 @@ def inUnitedStates(array):
         return False
     lat = float(array[0])
     lng = float(array[1])
-    if lat < 49.0 and lat > 24.45 and lng > -124.7 and lng < -62.2:
-        return Tru
+    if lat < 49.0 and lat > 18.0 and lng > -124.7 and lng < -62.2:
+        return True
     return False
 
 def getInfoWanted(array):
 
-    id = str(array[2]).split('/')
-    info = id[len(id)-1]
-    return  [ str(array[0])+ "," +str(array[1]) +"," + info ]
+    id = (array[-1]).encode('utf-8').split('/')
+
+    info = id[-1]
+    info = info.replace(',','')
+    info = info.replace('>','')
+    return  str(array[0])+ "," +str(array[1]) +"," + info
 
 
 if __name__ == "__main__":
@@ -55,4 +58,3 @@ if __name__ == "__main__":
     all_data.saveAsTextFile("file:////home/training/Desktop/filtered_all")
     usa_data.saveAsTextFile("file:////home/training/Desktop/filtered_usa")
     sc.stop()
-
