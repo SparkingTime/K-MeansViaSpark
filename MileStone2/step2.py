@@ -2,7 +2,7 @@
 import plotly.plotly as py
 import pandas as pd
 
-df = pd.read_csv('sample_geo.csv')
+df = pd.read_csv('step2.sample_geo.csv')
 df.head()
 
 df['text'] = "ID: " + df['LocationID'].astype(str)
