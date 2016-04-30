@@ -30,11 +30,13 @@ Clustering algorithms can be applied in many fields, for instance:
 * Earthquake studies: clustering observed earthquake epicenters to identify dangerous zones;
 * WWW: document classification; clustering weblog data to discover groups of similar access patterns.
 
+######Purpose of this project
 
+In this project, we implement an iterative algorithm (simple K-means) via **Spark** that solves the clustering problem in a parallel fashion. 
 
 ================
 
-####High-level Algorithm
+####High-level k-Means Algorithm
 
 As mentioned above, K-means clustering is quite intuitive and straightforward. Here we first introduce the high-level algorithm.
 
@@ -53,13 +55,13 @@ We choose Spark
 
 ----
 
-#####Step1- Understanding Parallel Data Processing and Persisting RDDs
+######Step1- Understanding Parallel Data Processing and Persisting RDDs
 ----
 
-#####Stpe2- Understanding and Implementing k-means
+######Stpe2- Understanding and Implementing k-means
 ----
 
-#####Step3- Runtime Analysis
+######Step3- Runtime Analysis
 
 ----
 ####Conclusion
