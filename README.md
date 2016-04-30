@@ -6,11 +6,12 @@
 
 ####Introduction
 
+######What is Clustering
 Clustering is the task of grouping a set of objects in such a way that objects in the same cluster are more similar  to each other than to those in other clusters. 
 
 While does not look like a complex problem to solve, it is often considered to be one of the most important unsupervised learning problem in machine larning. As as every other problem of this kind, it deals with finding a structure in a collection of unlabeled data. Following is an illustration of the process 
 
-![alt text](http://home.deib.polimi.it/matteucc/Clustering/tutorial_html/images/clustering.gif “Clustering Illustration")
+![alt text](http://home.deib.polimi.it/matteucc/Clustering/tutorial_html/images/clustering.gif "Clustering Illustration")
 ================
 
 ####High-level Algorithm
