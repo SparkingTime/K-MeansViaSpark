@@ -30,7 +30,7 @@ Clustering algorithms can be applied in many fields, for instance:
 * Earthquake studies: clustering observed earthquake epicenters to identify dangerous zones;
 * WWW: document classification; clustering weblog data to discover groups of similar access patterns.
 
-<iframe width="900" height="800" frameborder="0" scrolling="no" src="https://plot.ly/~rzbens/0.embed"></iframe>
+
 
 ================
 
@@ -53,13 +53,13 @@ We choose Spark
 
 ----
 
-#####Step1-
+#####Step1- Understanding Parallel Data Processing and Persisting RDDs
 ----
 
-#####Stpe2-
+#####Stpe2- Understanding and Implementing k-means
 ----
 
-#####Step3-Runtime Analysis
+#####Step3- Runtime Analysis
 
 ----
 ####Conclusion
