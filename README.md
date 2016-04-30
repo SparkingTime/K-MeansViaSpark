@@ -46,6 +46,7 @@ In this project, we implement an iterative algorithm (simple K-means) via **Spar
 ####High-level k-Means Algorithm
 
 As mentioned above, K-means clustering is quite intuitive and straightforward. Here we first introduce the high-level algorithm.
+
 1. Randomly select ‘c’ cluster centers.
 2. Calculate the distance between each data point and cluster centers.
 3. Assign the data point to the cluster center whose distance from the cluster center is minimum of all the cluster centers.
