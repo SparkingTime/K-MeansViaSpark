@@ -1,11 +1,10 @@
-#VM minimum Setting
+#K-Means Clustering on large Geo data via Spark 
 
-1. RAM --2048
-2. Video -- 128
-3. CPU -- 2
 
-#Routing
+##Introduction
 
-1.  Seed -- Python modeling & Visulization
-2.  Chris -- Scala Preprocessing & Visualization
-3.  Mengna -- Machine learning support & Visualization
+
+###RDD persistance 
+[RDD persistance with cache](http://http://spark.apache.org/docs/latest/programming-guide.html#rdd-persistence)
+
+
