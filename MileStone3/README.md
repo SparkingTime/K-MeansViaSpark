@@ -1,6 +1,6 @@
 #Final Report
 
-* Need chris to refilter the data *
+*Need chris to refilter the data*
 
 
 ###RDD persistance 
