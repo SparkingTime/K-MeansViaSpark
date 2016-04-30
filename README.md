@@ -1,5 +1,5 @@
 ### K-Means Clustering on large Geo data via Spark
-While k-means clustering 
+@SeedofWind @Cogle @Mengnalin
 
 ####Introduction
 
