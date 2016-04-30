@@ -32,7 +32,7 @@ Clustering algorithms can be applied in many fields, for instance:
 
 ######Purpose of this project
 
-In this project, we implement an iterative algorithm (simple K-means) via **Spark** that solves the clustering problem in a parallel fashion. 
+In this project, we implement an iterative algorithm (simple K-means) via **Spark** that solves the clustering problem in a parallel fashion. Details about K-means algorithm and the reason why we chose Spark will be discussed later.
 
 ================
 
