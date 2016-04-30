@@ -7,6 +7,9 @@
 ####Introduction
 
 ######What is Clustering
+
+-----
+
 Clustering is the task of grouping a set of objects in such a way that objects in the same cluster are more similar  to each other than to those in other clusters. 
 
 While does not look like a complex problem to solve, it is often considered to be one of the most important unsupervised learning problem in machine larning. As as every other problem of this kind, it deals with finding a structure in a collection of unlabeled data. Following is an illustration of the process 
@@ -15,11 +18,15 @@ While does not look like a complex problem to solve, it is often considered to b
 
 ######Goals of Clustering
 
+----
+
 So, the goal of clustering is to determine the intrinsic grouping in a set of unlabeled data. But how to decide what constitutes a good clustering? It can be shown that there is no absolute “best” criterion which would be independent of the final aim of the clustering. Consequently, it is the user which must supply this criterion, in such a way that the result of the clustering will suit their needs.
 For instance, we could be interested in finding representatives for homogeneous groups (data reduction), in finding “natural clusters” and describe their unknown properties (“natural” data types), in finding useful and suitable groupings (“useful” data classes) or in finding unusual data objects (outlier detection).
 
 
 ######Use cases of Clustering
+----
+
 Clustering algorithms can be applied in many fields, for instance:
 
 * Marketing: finding groups of customers with similar behavior given a large database of customer data containing their properties and past buying records;
