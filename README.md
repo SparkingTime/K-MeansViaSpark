@@ -64,7 +64,7 @@ K-means in a "mapreduce" context is a little bit more invovled but goes as follo
 * Iterate over each value vector and calculate the average vector. (Sum each vector and devide each part by the number of vectors we received).
 * This is the new center, save it into a SequenceFile.
 * Check the convergence between the clustercenter that is stored in the key object and the new center.
-        * If it they are not equal, increment an update counter
+    * If it they are not equal, increment an update counter
 * Run this whole thing until nothing was updated anymore.
 
 
