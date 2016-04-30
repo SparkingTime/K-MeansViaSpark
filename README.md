@@ -50,9 +50,12 @@ As mentioned above, K-means clustering is quite intuitive and straightforward. H
 1. Randomly select ‘c’ cluster centers.
 2. Calculate the distance between each data point and cluster centers.
 3. Assign the data point to the cluster center whose distance from the cluster center is minimum of all the cluster centers.
-4.  Recalculate the new cluster center using 
+4. Recalculate the new cluster centers using 
 
         V_i = Sum(x_i)/count(i)
+
+5. Recalculate the distance between each data point and new obtained cluster centers.
+6. If no data point was reassigned then stop, otherwise repeat from step (3).
 
 K-means in a "mapreduce" context is a little bit more invovled but goes as follows.
 
