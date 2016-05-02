@@ -10,6 +10,7 @@ import numpy as np
 from pyspark import SparkContext
 from haversine import haversine as hv
 
+
 def generateVector(line):
     result = []
     linewords = line.split(' ')
@@ -22,7 +23,7 @@ def closestCenterHaversine(p, centers):
     bestIndex = 0
     closest = float("+inf")
     for i in range(len(centers)):
-        tempDist = hv(p,centers[i])
+        tempDist = hv(p, centers[i])
         if tempDist < closest:
             closest = tempDist
             bestIndex = i
@@ -33,25 +34,26 @@ def closestCenterEuclidean(p, centers):
     bestIndex = 0
     closest = float("+inf")
     for i in range(len(centers)):
-        tempDist = np.sum( (p-centers[i])**2 )
+        tempDist = np.sum((p - centers[i])**2)
         if tempDist < closest:
             closest = tempDist
             bestIndex = i
     return bestIndex
 
 
-
 def mapHaversine(p):
     return (closestCenterHaversine(p, kPoints), (p, 1))
+
+
 def mapEuclidean(p):
     return (closestCenterEuclidean(p, kPoints), (p, 1))
-
 
 
 if __name__ == "__main__":
 
     if len(sys.argv) != 5:
-        print("Usage: kmeans <file> <k> <convergeDist> <DistanceMethod>", file=sys.stderr)
+        print("Usage: kmeans <file> <k> <convergeDist> <DistanceMethod>",
+              file=sys.stderr)
         exit(-1)
 
     print("""WARN: This is a naive implementation of KMeans Clustering and is given
@@ -69,28 +71,47 @@ if __name__ == "__main__":
     tempDist = 1.0
 
     while tempDist > convergeDist:
-        if(DistanceMethod=="Euclidean"):
+        if(DistanceMethod == "Euclidean"):
             closest = data.map(mapEuclidean)
-        elif(DistanceMethod=="GreateCircle"):
+        elif(DistanceMethod == "GreateCircle"):
             closest = data.map(mapHaversine)
         else:
             print("WTF DID YOU SAY? MAN, GreateCircle/Euclidean please")
             exit(-1)
 
-
         pointStats = closest.reduceByKey(
-            lambda p1_c1, p2_c2: (p1_c1[0] + p2_c2[0], p1_c1[1] + p2_c2[1]))
+            lambda p1_c1, p2_c2: (p1_c1[0] + p2_c2[0], p1_c1[1] + p2_c2[1], p1_c1[0].tolist() + p2_c2[0].tolist()))
         newPoints = pointStats.map(
             lambda st: (st[0], st[1][0] / st[1][1])).collect()
 
-        if(DistanceMethod=="Euclidean"):
-            tempDist = sum(np.sum((kPoints[iK] - p) ** 2) for (iK, p) in newPoints)
+        if(DistanceMethod == "Euclidean"):
+            tempDist = sum(np.sum((kPoints[iK] - p) ** 2)
+                           for (iK, p) in newPoints)
         else:
-            tempDist = sum(  hv(kPoints[iK],p) for (iK,p) in newPoints )
+            tempDist = sum(hv(kPoints[iK], p) for (iK, p) in newPoints)
 
         for (iK, p) in newPoints:
             kPoints[iK] = p
+    pointsInfo = pointStats.collect()
 
+    for file in pointsInfo:
+        numofpoints = file[1][1]
+        centerIndex = file[0]
+        result = []
+        result.append(kPoints[centerIndex].tolist())
+        if numofpoints == 1:
+            pass
+        else:
+            flattenedpoints = file[1][2]
+            for i in range(0, len(flattenedpoints), 2):
+                result.append([flattenedpoints[i], flattenedpoints[i + 1]])
+        outputFilePath = "cluster_" + str(counter) + ".csv"
+        with open(outputFilePath, "wb") as f:
+            writer = csv.writer(f)
+            writer.writerows(result)
+        counter = counter + 1
+
+    print("@@@@@@@@@!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
     print("Final centers: " + str(kPoints))
-    print("points Stats: " + str(pointStats.collect() ))
+    print("points Stats: " + str(pointsInfo))
     sc.stop()
