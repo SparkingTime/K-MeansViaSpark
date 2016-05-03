@@ -19,7 +19,7 @@ trace1 = [dict(
     type='scattergeo',
     lat=df_all['Lat'],
     lon=df_all['Lon'],
-    text=df_all['Id'],
+    #text=df_all['Id'],
     mode='markers',
     marker=dict(
         size=3,
@@ -37,7 +37,7 @@ trace2 = [dict(
     type='scattergeo',
     lat=df_usa['Lat'],
     lon=df_usa['Lon'],
-    text=df_usa['I'],
+    #text=df_usa['I'],
     mode='markers',
     marker=dict(
         size=3,
@@ -69,7 +69,7 @@ layout = dict(
 
 fig = dict(data=trace1, layout=layout)
 fig_ = dict(data=trace2, layout=layout)
-fig_wtf = dict(data = [trace1,trace2],layout=layout)
-#url = py.plot(fig_wtf, validate=False, filename='all')
-url = py.plot(fig, validate=False, filename='all')
-url = py.plot(fig_, validate=False, filename='usa')
+fig_wtf = dict(data = trace1+trace2,layout=layout)
+url = py.plot(fig_wtf, validate=False, filename='all vs usa')
+#url = py.plot(fig, validate=False, filename='all')
+#url = py.plot(fig_, validate=False, filename='usa')
