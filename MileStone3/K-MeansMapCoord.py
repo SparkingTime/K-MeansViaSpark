@@ -13,7 +13,7 @@ from haversine import haversine as hv
 
 def generateVector(line):
     result = []
-    linewords = line.split(' ')
+    linewords = line.split(',')
     result.append(float(linewords[0]))
     result.append(float(linewords[1]))
     return np.array(result)
@@ -43,19 +43,14 @@ def closestCenterEuclidean(p, centers):
 
 def mapHaversine(p):
     #return (closestCenterHaversine(p, kPoints), (p, 1))
-    return (closestCenterHaversine(p, kPoints), (p, 1,p.tolist()))
+    return (closestCenterHaversine(p, kPoints), (p, 1, p.tolist()))
 
 
 def mapEuclidean(p):
-    return (closestCenterEuclidean(p, kPoints), (p, 1))
+    return (closestCenterEuclidean(p, kPoints), (p, 1, p.tolist()))
 
 def testMethod(p1v, p2v):
-    print("Incoming values: "+str(p1v) +"  " +str(p2v))
-    print("p1v: " + str(p1v[0]))
-    print("p2v: " + str(p2v[0]))
-    temp = p1v[-1] + p2v[-1]
-    print(temp)
-    return (p1v[0] + p2v[0], p1v[1] + p2v[1], temp)
+    return (p1v[0] + p2v[0], p1v[1] + p2v[1],p1v[-1] + p2v[-1])
     
 
 if __name__ == "__main__":
@@ -64,10 +59,6 @@ if __name__ == "__main__":
         print("Usage: kmeans <file> <k> <convergeDist> <DistanceMethod>",
               file=sys.stderr)
         exit(-1)
-
-    print("""WARN: This is a naive implementation of KMeans Clustering and is given
-       as an example! Please refer to examples/src/main/python/mllib/kmeans.py for an example on
-       how to use MLlib's KMeans implementation.""", file=sys.stderr)
 
     sc = SparkContext("local[4]",appName="PythonKMeans")
     lines = sc.textFile(sys.argv[1])
@@ -119,7 +110,4 @@ if __name__ == "__main__":
             writer = csv.writer(f)
             writer.writerows(result)
         counter = counter + 1
-    print("@@@@@@@@@!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-    print("Final centers: " + str(kPoints))
-    print("points Stats: " + str(pointsInfo))
     sc.stop()
