@@ -69,7 +69,7 @@ if __name__ == "__main__":
        as an example! Please refer to examples/src/main/python/mllib/kmeans.py for an example on
        how to use MLlib's KMeans implementation.""", file=sys.stderr)
 
-    sc = SparkContext(appName="PythonKMeans")
+    sc = SparkContext("local[4]",appName="PythonKMeans")
     lines = sc.textFile(sys.argv[1])
     data = lines.map(generateVector).cache()
     K = int(sys.argv[2])
