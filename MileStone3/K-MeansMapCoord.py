@@ -51,7 +51,7 @@ def mapEuclidean(p):
 
 def testMethod(p1v, p2v):
     return (p1v[0] + p2v[0], p1v[1] + p2v[1],p1v[-1] + p2v[-1])
-    
+
 
 if __name__ == "__main__":
 
@@ -79,7 +79,7 @@ if __name__ == "__main__":
             print("WTF DID YOU SAY? MAN, GreateCircle/Euclidean please")
             exit(-1)
         #print("CLOSEST: " + str(closest.collect()) + "--------------------------------------------------------------->")
-        pointStats = closest.reduceByKey(testMethod) 
+        pointStats = closest.reduceByKey(testMethod)
             #lambda p1_c1, p2_c2: (p1_c1[0] + p2_c2[0], p1_c1[1] + p2_c2[1], p1_c1[0].tolist() + p2_c2[0].tolist()))
             #lambda p1_c1, p2_c2: (p1_c1[0] + p2_c2[0], p1_c1[1] + p2_c2[1], p1_c1[0].tolist() + p2_c2[0].tolist()))
         newPoints = pointStats.map(
@@ -94,6 +94,7 @@ if __name__ == "__main__":
     pointsInfo = pointStats.collect()
 
     counter = 0
+    # Iterate through kPoints  and make kcenters
     for file in pointsInfo:
         numofpoints = file[1][1]
         centerIndex = file[0]
