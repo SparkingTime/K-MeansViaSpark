@@ -82,14 +82,18 @@ We choose Spark
 
 ######Step1- Understanding Parallel Data Processing and Persisting RDDs
 ----
+[RDD persistance with cache](http://spark.apache.org/docs/latest/programming-guide.html#rdd-persistence)
 
 ######Stpe2- Understanding and Implementing k-means
 ----
 
-######Step3- Runtime Analysis
+######step3- Compute and Visulize 
+-----
+
+######Step4- Runtime Analysis
 
 ----
 ####Conclusion
-[RDD persistance with cache](http://http://spark.apache.org/docs/latest/programming-guide.html#rdd-persistence)
+
 
 
