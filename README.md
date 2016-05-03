@@ -85,7 +85,8 @@ We choose Spark
 Spark is fast. At the core of Spark's speed lies the RDD. In this section we will exam the resilient distributed dataset(RDD), and 
 look at how this abstraction is responsible for the large performance differences that exist between Spark and Hadoop.  
 
-Our first step is to understand what an RDD is. At a high level an RDD is an **immutable** distributed collection of objects. 
+Our first step is to understand what an RDD is. At a high level an RDD is an **immutable** distributed collection of objects. Spark, like Hadoop, is a distributed computing system. When an RDD is created in Spark it is created such that it is **partionable**; this means that when running a task Spark can split up an RDD and distributed it across various compute nodes within the cluster. For those that are familiar with Hadoop this may not seem like a revolutionary idea, MapReduce based off a similar idea. The difference between the two lies in how the data is stored. 
+
 
 
 ######Step2- Understanding and Implementing k-means
