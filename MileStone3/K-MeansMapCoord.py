@@ -1,12 +1,11 @@
 '''
 This script Calculate Geomedian by averaging Lon/Lat directly
 Add is implemented through numpy array
-first point is the center
 '''
 from __future__ import print_function
 
 import sys
-
+import csv
 import numpy as np
 from pyspark import SparkContext
 from haversine import haversine as hv
@@ -57,7 +56,11 @@ if __name__ == "__main__":
               file=sys.stderr)
         exit(-1)
 
-    sc = SparkContext(appName="K-means Direct Average")
+    print("""WARN: This is a naive implementation of KMeans Clustering and is given
+       as an example! Please refer to examples/src/main/python/mllib/kmeans.py for an example on
+       how to use MLlib's KMeans implementation.""", file=sys.stderr)
+
+    sc = SparkContext(appName="PythonKMeans")
     lines = sc.textFile(sys.argv[1])
     data = lines.map(generateVector).cache()
     K = int(sys.argv[2])
@@ -91,6 +94,7 @@ if __name__ == "__main__":
             kPoints[iK] = p
     pointsInfo = pointStats.collect()
 
+    counter = 0
     for file in pointsInfo:
         numofpoints = file[1][1]
         centerIndex = file[0]
@@ -107,8 +111,8 @@ if __name__ == "__main__":
             writer = csv.writer(f)
             writer.writerows(result)
         counter = counter + 1
-    #
-    # print("@@@@@@@@@!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-    # print("Final centers: " + str(kPoints))
-    # print("points Stats: " + str(pointsInfo))
+
+    print("@@@@@@@@@!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    print("Final centers: " + str(kPoints))
+    print("points Stats: " + str(pointsInfo))
     sc.stop()

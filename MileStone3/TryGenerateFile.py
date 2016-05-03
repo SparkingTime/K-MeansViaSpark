@@ -20,5 +20,3 @@ for file in a:
         writer = csv.writer(f)
         writer.writerows(result)
     counter = counter +1
-
-#np.savetxt("test.csv", a, delimiter="," ,fmt=%.3e)
