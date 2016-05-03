@@ -82,9 +82,13 @@ We choose Spark
 
 ######Step1- Understanding Parallel Data Processing and Persisting RDDs
 ----
-[RDD persistance with cache](http://spark.apache.org/docs/latest/programming-guide.html#rdd-persistence)
+Spark is fast. At the core of Spark's speed lies the RDD. In this section we will exam the resilient distributed dataset(RDD), and 
+look at how this abstraction is responsible for the large performance differences that exist between Spark and Hadoop.  
 
-######Stpe2- Understanding and Implementing k-means
+Our first step is to understand what an RDD is. At a high level an RDD is an **immutable** distributed collection of objects. 
+
+
+######Step2- Understanding and Implementing k-means
 ----
 
 ######step3- Compute and Visulize 
