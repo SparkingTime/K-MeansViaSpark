@@ -82,8 +82,14 @@ We choose Spark
 
 ######Step1- Understanding Parallel Data Processing and Persisting RDDs
 ----
+Spark is fast. At the core of Spark's speed lies the RDD. In this section we will exam the resilient distributed dataset(RDD), and 
+look at how this abstraction is responsible for the large performance differences that exist between Spark and Hadoop.  
 
-######Stpe2- Understanding and Implementing k-means
+Our first step is to understand what an RDD is. At a high level an RDD is an **immutable** distributed collection of objects. Spark, like Hadoop MapReduce, is a way of computing data on a distributed computing system. When an RDD is created in Spark it is created such that it is **partionable**; this means that when running a task Spark can split up an RDD and distributed it across various compute nodes within the cluster. For those that are familiar with Hadoop this may not seem like a revolutionary idea, MapReduce based off a similar idea. The difference between the two lies in how the data is stored. 
+
+
+
+######Step2- Understanding and Implementing k-means
 ----
 
 ######step3- Compute and Visulize 
@@ -93,6 +99,6 @@ We choose Spark
 
 ----
 ####Conclusion
-[RDD persistance with cache](http://http://spark.apache.org/docs/latest/programming-guide.html#rdd-persistence)
+
 
 
