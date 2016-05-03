@@ -25,8 +25,9 @@ map.drawmapboundary(fill_color='#f4f4f4')
 
 
 x,y = map(df_usa['Lon'].values, df_usa['Lat'].values)
-map.plot(x, y, 'bo', markersize=1.1)
+map.plot(x, y, 'y.', markersize=.9)
 x,y = map(df_all['Lon'].values, df_all['Lat'].values)
-map.plot(x, y, 'ro', markersize=1.1)
-plt.savefig('box.png',bbox_inches='tight')
+map.plot(x, y, 'r.', markersize=.9)
+#plt.savefig('box.png',bbox_inches='tight')
+plt.show()
 
