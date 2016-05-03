@@ -19,9 +19,19 @@
 ----------
 
 * Submission Procedure
+   X 
+
 * Geo-Median methods
+  X
+
 * 3D Visulization for extra credit?
+  X
+
 * *Sample the cluster because of the api limit*
+Parse the 
+
+
 * *Convergence Value* touse
+X
 * For the report. Is there anyway to analyize the quality of clustering except viewing it?
 * Run-Time Analysis => (1) Clarifying (2) runing on different computers?
