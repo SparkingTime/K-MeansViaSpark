@@ -42,12 +42,21 @@ def closestCenterEuclidean(p, centers):
 
 
 def mapHaversine(p):
-    return (closestCenterHaversine(p, kPoints), (p, 1))
+    #return (closestCenterHaversine(p, kPoints), (p, 1))
+    return (closestCenterHaversine(p, kPoints), (p, 1,p.tolist()))
 
 
 def mapEuclidean(p):
     return (closestCenterEuclidean(p, kPoints), (p, 1))
 
+def testMethod(p1v, p2v):
+    print("Incoming values: "+str(p1v) +"  " +str(p2v))
+    print("p1v: " + str(p1v[0]))
+    print("p2v: " + str(p2v[0]))
+    temp = p1v[-1] + p2v[-1]
+    print(temp)
+    return (p1v[0] + p2v[0], p1v[1] + p2v[1], temp)
+    
 
 if __name__ == "__main__":
 
@@ -69,7 +78,7 @@ if __name__ == "__main__":
 
     kPoints = data.takeSample(False, K, 1)
     tempDist = 1.0
-
+    count = 0
     while tempDist > convergeDist:
         if(DistanceMethod == "Euclidean"):
             closest = data.map(mapEuclidean)
@@ -78,18 +87,17 @@ if __name__ == "__main__":
         else:
             print("WTF DID YOU SAY? MAN, GreateCircle/Euclidean please")
             exit(-1)
-
-        pointStats = closest.reduceByKey(
-            lambda p1_c1, p2_c2: (p1_c1[0] + p2_c2[0], p1_c1[1] + p2_c2[1], p1_c1[0].tolist() + p2_c2[0].tolist()))
+        #print("CLOSEST: " + str(closest.collect()) + "--------------------------------------------------------------->")
+        pointStats = closest.reduceByKey(testMethod) 
+            #lambda p1_c1, p2_c2: (p1_c1[0] + p2_c2[0], p1_c1[1] + p2_c2[1], p1_c1[0].tolist() + p2_c2[0].tolist()))
+            #lambda p1_c1, p2_c2: (p1_c1[0] + p2_c2[0], p1_c1[1] + p2_c2[1], p1_c1[0].tolist() + p2_c2[0].tolist()))
         newPoints = pointStats.map(
             lambda st: (st[0], st[1][0] / st[1][1])).collect()
-
         if(DistanceMethod == "Euclidean"):
             tempDist = sum(np.sum((kPoints[iK] - p) ** 2)
                            for (iK, p) in newPoints)
         else:
             tempDist = sum(hv(kPoints[iK], p) for (iK, p) in newPoints)
-
         for (iK, p) in newPoints:
             kPoints[iK] = p
     pointsInfo = pointStats.collect()
@@ -111,7 +119,6 @@ if __name__ == "__main__":
             writer = csv.writer(f)
             writer.writerows(result)
         counter = counter + 1
-
     print("@@@@@@@@@!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
     print("Final centers: " + str(kPoints))
     print("points Stats: " + str(pointsInfo))
