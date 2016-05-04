@@ -99,6 +99,9 @@ In Spark the RDD allows the the program to **cache** a particular partion on a n
 
 #####Step2- Understanding and Implementing k-means
 
+K-means is one of the best known family of clustering algorithms. The heart of the algorithm is the for-loop, in which we consider each point other than the k selected points and assign it to the closest cluster, where closest here closest to the centroid of the cluster. The centroid of the cluster can migrate as points are assigned to it. However, the centroid tends not to move too much because points near the cluster are likely to be assigned. 
+Here we implement a function to retrieve latitude and longitude of every record in the target data. Then we choose k initial cluster centers at random by build-in function takeSample. We create mapper output (key is index of point and value is (index of closest center, 1, point in list format)) by choosing corresponding cluster center that is closest to the point. Reducer output is created by reduceByKey function. Then new cluster center is calculated by average all data in one cluster. Temporary distance is calculated by adding all distances between data and the corresponding cluster centers. If the distance is smaller than the previous one then we just update it. We iterate through while loop until difference between previous distance and current one meet certain condition. We use two methods to calculate distance between two data points( Euclidean Distance and Great Circle Distance) depending on the input. Details can be found [here]:()
+
 
 #####step3- Compute and Visulize 
 
