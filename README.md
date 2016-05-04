@@ -1,4 +1,7 @@
-### K-Means Clustering on large Geo data via Spark
+##To do
+*  
+
+## K-Means Clustering on large Geo data via Spark
 
 --------- 
 
