@@ -42,7 +42,6 @@ def closestCenterEuclidean(p, centers):
 
 
 def mapHaversine(p):
-    #return (closestCenterHaversine(p, kPoints), (p, 1))
     return (closestCenterHaversine(p, kPoints), (p, 1, p.tolist()))
 
 
@@ -55,8 +54,8 @@ def testMethod(p1v, p2v):
 
 if __name__ == "__main__":
 
-    if len(sys.argv) != 5:
-        print("Usage: kmeans <file> <k> <convergeDist> <DistanceMethod>",
+    if len(sys.argv) != 6:
+        print("Usage: kmeans <file> <k> <convergeDist> <DistanceMethod> <dir> ",
               file=sys.stderr)
         exit(-1)
 
@@ -66,6 +65,7 @@ if __name__ == "__main__":
     K = int(sys.argv[2])
     convergeDist = float(sys.argv[3])
     DistanceMethod = sys.argv[4]
+    dirName = sys.argv[5]
 
     kPoints = data.takeSample(False, K, 1)
     it = 0
@@ -97,6 +97,14 @@ if __name__ == "__main__":
         it = it + 1
 
     pointsInfo = pointsInfo.collect()
+    outputFilePath ="./step3.Output/" + dirName+ "/cluster_centers.csv"
+    result = []
+    for ele in:
+        result.append(ele.tolist())
+      
+    with open(outputFilePath, "wb") as f:
+            writer = csv.writer(f)
+            writer.writerows(result)
 
     counter = 0
     # Iterate through kPoints  and make kcenters
@@ -111,7 +119,7 @@ if __name__ == "__main__":
             flattenedpoints = file[1][2]
             for i in range(0, len(flattenedpoints), 2):
                 result.append([flattenedpoints[i], flattenedpoints[i + 1]])
-        outputFilePath = "cluster_" + str(counter) + ".csv"
+        outputFilePath ="./step3.Output/" + dirName+ "/cluster_" + str(counter) + ".csv"
         with open(outputFilePath, "wb") as f:
             writer = csv.writer(f)
             writer.writerows(result)
