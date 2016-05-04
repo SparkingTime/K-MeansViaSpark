@@ -60,7 +60,7 @@ if __name__ == "__main__":
               file=sys.stderr)
         exit(-1)
 
-    sc = SparkContext("local[4]",appName="PythonKMeans")
+    sc = SparkContext("local[5]",appName="PythonKMeans")
     lines = sc.textFile(sys.argv[1])
     data = lines.map(generateVector).cache()
     K = int(sys.argv[2])
@@ -68,9 +68,11 @@ if __name__ == "__main__":
     DistanceMethod = sys.argv[4]
 
     kPoints = data.takeSample(False, K, 1)
-    tempDist = 1.0
-    count = 0
-    while tempDist > convergeDist:
+    it = 0
+    tempDist = float('inf')
+    global_min = float('inf')
+    while tempDist > convergeDist and it < 1:
+        print("<-@@@@@@@@@@@@@@@@@@@@@@-----------------------------------------------------" + "Distance: "+ str(tempDist) + " on iteration "+ str(it) +"------------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@->")
         if(DistanceMethod == "Euclidean"):
             closest = data.map(mapEuclidean)
         elif(DistanceMethod == "GreateCircle"):
@@ -78,10 +80,8 @@ if __name__ == "__main__":
         else:
             print("WTF DID YOU SAY? MAN, GreateCircle/Euclidean please")
             exit(-1)
-        #print("CLOSEST: " + str(closest.collect()) + "--------------------------------------------------------------->")
-        pointStats = closest.reduceByKey(testMethod) 
-            #lambda p1_c1, p2_c2: (p1_c1[0] + p2_c2[0], p1_c1[1] + p2_c2[1], p1_c1[0].tolist() + p2_c2[0].tolist()))
-            #lambda p1_c1, p2_c2: (p1_c1[0] + p2_c2[0], p1_c1[1] + p2_c2[1], p1_c1[0].tolist() + p2_c2[0].tolist()))
+        pointStats = closest.reduceByKey(testMethod,5) 
+        #pointStats = closest.reduceByKey(testMethod) 
         newPoints = pointStats.map(
             lambda st: (st[0], st[1][0] / st[1][1])).collect()
         if(DistanceMethod == "Euclidean"):
@@ -91,7 +91,12 @@ if __name__ == "__main__":
             tempDist = sum(hv(kPoints[iK], p) for (iK, p) in newPoints)
         for (iK, p) in newPoints:
             kPoints[iK] = p
-    pointsInfo = pointStats.collect()
+        if tempDist < global_min:
+    	    pointsInfo = pointStats
+            global_min = tempDist
+        it = it + 1
+
+    pointsInfo = pointsInfo.collect()
 
     counter = 0
     for file in pointsInfo:
