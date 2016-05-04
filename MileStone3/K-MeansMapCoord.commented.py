@@ -41,11 +41,11 @@ def closestCenterEuclidean(p, centers):
             bestIndex = i
     return bestIndex
 
-#retrieve map output in greate circle distance(key: index of the piont, value: (point, 1, point in list format))
+#retrieve map output in greate circle distance(key: index of the closest center, value: (point, 1, point in list format))
 def mapHaversine(p):
     return (closestCenterHaversine(p, kPoints), (p, 1, p.tolist()))
 
-#retrieve map output in Euclidean distance(key: index of the piont, value: (point, 1, point in list format))
+#retrieve map output in Euclidean distance(key: index of the closest center, value: (point, 1, point in list format))
 def mapEuclidean(p):
     return (closestCenterEuclidean(p, kPoints), (p, 1, p.tolist()))
 
