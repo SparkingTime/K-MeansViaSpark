@@ -1,5 +1,8 @@
 ##To do
-*  
+*  Visulization of geo (euclidean)
+*  VIsulization of deviceStatus
+*  All data?
+*  Run time analysis no cache
 
 ## K-Means Clustering on large Geo data via Spark
 
