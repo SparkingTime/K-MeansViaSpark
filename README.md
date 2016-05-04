@@ -114,7 +114,8 @@ Following is the visulization. A more detailed
 
 ######Step4- Runtime Analysis
 The Run Time Analysis utilized the following command in order to determine the effects of different 
-        `time spark-submit K-MeansMapCoord.py file:///home/training/K-MeansViaSpark/MileStone3/Input/step3.filteredAll.csv 4 25 GreateCircle`
+    
+`time spark-submit K-MeansMapCoord.py file:///home/training/K-MeansViaSpark/MileStone3/Input/step3.filteredAll.csv 4 25 GreateCircle`
 
 | Program Run Stats        | Time Taken             | 
 | ------------------------ |:----------------------:| 
