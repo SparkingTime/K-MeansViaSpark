@@ -80,7 +80,7 @@ We choose Spark
 
 ----
 
-######Step1- Understanding Parallel Data Processing and Persisting RDDs
+#####Step1- Understanding Parallel Data Processing and Persisting RDDs
 ----
 Spark is fast. At the core of Spark's speed lies the RDD. In this section we will exam the resilient distributed dataset(RDD), and 
 look at how this abstraction is responsible for the large performance differences that exist between Spark and Hadoop.  
@@ -89,13 +89,13 @@ Our first step is to understand what an RDD is. At a high level an RDD is an **i
 
 In Spark the RDD allows the the program to **cache** a particular partion on a node. This __peristance__ of data allows us to reuse data over and over in our operations. This persistance of data allows us to implement iterative algorithms with ease. Instead of being bottlenecked by I/O operations and the associated network throughput to transfer large quanities of data it can all be stored on a node and reused. This is a key difference from the Hadoop MapReduce ideology. In MapReduce everything must be written out to a file.; this involves large amounts of network traffic as data must be transported across the network. In addition I/O operation are notoriously slow so elminating these operations speeds up our time tremendously.  
 
-######Step2- Understanding and Implementing k-means
+#####Step2- Understanding and Implementing k-means
 ----
 
-######step3- Compute and Visulize 
+#####step3- Compute and Visulize 
 -----
 
-#######part@2-Synthetic Data
+######part@2-Synthetic Data
 ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.ouput/%402.SyntheticLocationVisulization.png "Clustering Illustration")
 
 
