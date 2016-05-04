@@ -129,8 +129,12 @@ K-means clustering on this data converges nicely with a converge distance 0.1 (u
     Following is the visulization. A more detailed plot(full-featured interactive explore) can be found [here](https://plot.ly/445/%7Eseedbazzal/)
     
     ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%402.SyntheticLocationVisulization.png "Syntheic Geo clustering")
-    ######Step4- Runtime Analysis
-    The Run Time Analysis utilized the following command in order to determine the effects of different 
+
+---
+
+######Step4- Runtime Analysis
+
+The Run Time Analysis utilized the following command in order to determine the effects of different 
     
 `time spark-submit K-MeansMapCoord.py file:///home/training/K-MeansViaSpark/MileStone3/Input/step3.filteredAll.csv 4 25 GreateCircle`
 
