@@ -10,7 +10,7 @@ import numpy as np
 from pyspark import SparkContext
 from haversine import haversine as hv
 
-
+#retrieve latitude and longitude of every record
 def generateVector(line):
     result = []
     linewords = line.split(',')
@@ -18,7 +18,7 @@ def generateVector(line):
     result.append(float(linewords[1]))
     return np.array(result)
 
-
+#retrieve index of the cluster cernter that is closest to p in greate circle distance
 def closestCenterHaversine(p, centers):
     bestIndex = 0
     closest = float("+inf")
@@ -30,6 +30,7 @@ def closestCenterHaversine(p, centers):
     return bestIndex
 
 
+#retrieve index of the cluster cernter that is closest to p in Euclidean distance
 def closestCenterEuclidean(p, centers):
     bestIndex = 0
     closest = float("+inf")
