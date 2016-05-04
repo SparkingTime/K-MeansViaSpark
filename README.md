@@ -1,5 +1,8 @@
 ##To do
-*  
+*  Visulization of geo (euclidean)
+*  VIsulization of deviceStatus
+*  All data?
+*  Run time analysis no cache
 
 ## K-Means Clustering on large Geo data via Spark
 
@@ -129,6 +132,8 @@ The Run Time Analysis utilized the following command in order to determine the e
 | Penta Core               | 3 min 01 secs          |
 
 *__Averaged over 5 Runs__
+
+
 ----
 ####Conclusion
 
