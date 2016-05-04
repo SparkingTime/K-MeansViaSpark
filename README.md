@@ -111,13 +111,21 @@ Here, we present our clustering and visulization results for **Sample Geo, Devic
 
 *Cluster and Visualize the [Syntheic Geo data](./step3.input/step2.sample_geo.csv)*
 
-This converges nicely with a converge distance 0.1 (unlike the global data that contain points seperates further apart). We clustered it into 4 clusters (k=4). The output (divided to 4 files and 1 center file) can be seen [here](./MileStone3/step3.input)
+K-means clustering on this data converges nicely with a converge distance 0.1 (unlike the global data that contain points seperates further apart). We clustered it into 4 clusters (k=4) via both Euclidean Distance and Greate Circle Distance .
 
-Following is the visulization. A more detailed 
+1.  k = 4 DistanceMethod = GreateCircle
+The output (divided to 4 files and 1 center file) can be seen [here](https://github.com/SparkingTime/K-MeansViaSpark/tree/master/MileStone3/step3.Output/%401.DeviceLocationDataClusters_GreateCircle)
 
-![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.ouput/%402.SyntheticLocationVisulization.png "Clustering Illustration")
+Following is the visulization. A more detailed plot(full-featured interactive explore) can be found [here](https://plot.ly/445/%7Eseedbazzal/)
 
+![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%402.SyntheticLocationVisulization.png "Syntheic Geo clustering")
 
+2.  k = 4 DistanceMethod = Euclidean
+The output (divided to 4 files and 1 center file) can be seen [here](https://github.com/SparkingTime/K-MeansViaSpark/tree/master/MileStone3/step3.Output/%401.DeviceLocationDataClusters_GreateCircle)
+
+Following is the visulization. A more detailed plot(full-featured interactive explore) can be found [here](https://plot.ly/445/%7Eseedbazzal/)
+
+![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%402.SyntheticLocationVisulization.png "Syntheic Geo clustering")
 ######Step4- Runtime Analysis
 The Run Time Analysis utilized the following command in order to determine the effects of different 
     
