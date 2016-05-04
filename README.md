@@ -1,4 +1,7 @@
-### K-Means Clustering on large Geo data via Spark
+##To do
+*  
+
+## K-Means Clustering on large Geo data via Spark
 
 --------- 
 
@@ -113,7 +116,19 @@ Following is the visulization. A more detailed
 
 
 ######Step4- Runtime Analysis
+The Run Time Analysis utilized the following command in order to determine the effects of different 
+    
+`time spark-submit K-MeansMapCoord.py file:///home/training/K-MeansViaSpark/MileStone3/Input/step3.filteredAll.csv 4 25 GreateCircle`
 
+| Program Run Stats        | Time Taken             | 
+| ------------------------ |:----------------------:| 
+| Single Core              | 9 min 40 secs          | 
+| Dual Core                | 3 min 03 secs          | 
+| Triple Core              | 3 min 02 secs          | 
+| Quad Core                | 3 min 02 secs          |
+| Penta Core               | 3 min 01 secs          |
+
+*__Averaged over 5 Runs__
 ----
 ####Conclusion
 
