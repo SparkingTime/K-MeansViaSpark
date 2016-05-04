@@ -116,6 +116,7 @@ In Spark the RDD allows the the program to **cache** a particular partion on a n
 K-means clustering on this data converges nicely with a converge distance 0.1 (unlike the global data that contain points seperates further apart). We clustered it into 4 clusters (k=4) via both Euclidean Distance and Greate Circle Distance .
 
 1.  k = 4 DistanceMethod = GreateCircle
+----
     The output (divided to 4 files and 1 center file) can be seen [here](https://github.com/SparkingTime/K-MeansViaSpark/tree/master/MileStone3/step3.Output/%401.DeviceLocationDataClusters_GreateCircle)
     
     Following is the visulization. A more detailed plot(full-featured interactive explore) can be found [here](https://plot.ly/445/%7Eseedbazzal/)
