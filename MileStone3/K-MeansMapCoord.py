@@ -112,4 +112,4 @@ if __name__ == "__main__":
             writer.writerows(result)
         counter = counter + 1
     sc.stop()
-   ＃axiba
+ 
