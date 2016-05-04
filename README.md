@@ -96,6 +96,8 @@ In Spark the RDD allows the the program to **cache** a particular partion on a n
 -----
 
 ######part@2-Synthetic Data
+        Cluster and Visualize the [Syntheic Geo data(from Milestone2 Stpe2)](./step3.input/step2.sample_geo.csv) 
+
 ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.ouput/%402.SyntheticLocationVisulization.png "Clustering Illustration")
 
 
