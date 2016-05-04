@@ -6,7 +6,7 @@
 
 ####Introduction
 
-######What is Clustering
+#####What is Clustering
 -----
 Clustering is the task of grouping a set of objects in such a way that objects in the same cluster are more similar  to each other than to those in other clusters. 
 
@@ -14,13 +14,13 @@ While does not look like a complex problem to solve, it is often considered to b
 
 ![alt text](http://home.deib.polimi.it/matteucc/Clustering/tutorial_html/images/clustering.gif "Clustering Illustration")
 
-######Goals of Clustering
+#####Goals of Clustering
 ----
 So, the goal of clustering is to determine the intrinsic grouping in a set of unlabeled data. But how to decide what constitutes a good clustering? It can be shown that there is no absolute “best” criterion which would be independent of the final aim of the clustering. Consequently, it is the user which must supply this criterion, in such a way that the result of the clustering will suit their needs.
 For instance, we could be interested in finding representatives for homogeneous groups (data reduction), in finding “natural clusters” and describe their unknown properties (“natural” data types), in finding useful and suitable groupings (“useful” data classes) or in finding unusual data objects (outlier detection).
 
 
-######Use cases of Clustering
+#####Use cases of Clustering
 ----
 Clustering algorithms can be applied in many fields, for instance:
 
@@ -32,7 +32,7 @@ Clustering algorithms can be applied in many fields, for instance:
 * Earthquake studies: clustering observed earthquake epicenters to identify dangerous zones;
 * WWW: document classification; clustering weblog data to discover groups of similar access patterns.
 
-######Purpose of this project
+#####Purpose of this project
 ------
 In this project, we implement an iterative algorithm (simple K-means) via **Spark** that solves the clustering problem in a parallel fashion. Details about K-means algorithm and the reason why we chose Spark will be discussed later.
 
@@ -54,13 +54,13 @@ As mentioned above, K-means clustering is quite intuitive and straightforward. H
 
 K-means in a "mapreduce" context is a little bit more invovled but goes as follows.
 
-######Mapper Phase
+#####Mapper Phase
 * Read the cluster centers into memory from a sequencefile
 * Iterate over each cluster center for each input key/value pair. 
 * Measure the distances and save the nearest center which has the lowest distance to the vector
 * Write the clustercenter with its vector to the filesystem.
 
-######Reduce Phase
+#####Reduce Phase
 * Iterate over each value vector and calculate the average vector. (Sum each vector and devide each part by the number of vectors we received).
 * This is the new center, save it into a SequenceFile.
 * Check the convergence between the clustercenter that is stored in the key object and the new center.
@@ -81,7 +81,7 @@ We choose Spark
 ----
 
 #####Step1- Understanding Parallel Data Processing and Persisting RDDs
-----
+
 Spark is fast. At the core of Spark's speed lies the RDD. In this section we will exam the resilient distributed dataset(RDD), and 
 look at how this abstraction is responsible for the large performance differences that exist between Spark and Hadoop.  
 
