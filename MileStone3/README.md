@@ -37,8 +37,12 @@ X
 * Run-Time Analysis => (1) Clarifying (2) runing on different computers?
 * 
 
-| Program Run Stats        | Time Taken           | 
-| ------------------------ |:--------------------:| 
-| Single Core              | 9min 40secs          | 
+The Run Time Analysis utilized the following command in order to determine the effects of different 
 
+| Program Run Stats        | Time Taken             | 
+| ------------------------ |:----------------------:| 
+| Single Core              | 9 min 40 secs          | 
+| Dual Core                | 3 min 03 secs          | 
+| Triple Core              | 3 min 03 secs          | 
 
+*__Averaged over 5 Runs__
