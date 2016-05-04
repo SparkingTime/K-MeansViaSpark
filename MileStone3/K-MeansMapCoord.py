@@ -51,7 +51,7 @@ def mapEuclidean(p):
 
 def testMethod(p1v, p2v):
     return (p1v[0] + p2v[0], p1v[1] + p2v[1],p1v[-1] + p2v[-1])
-    
+
 
 if __name__ == "__main__":
 
@@ -99,6 +99,7 @@ if __name__ == "__main__":
     pointsInfo = pointsInfo.collect()
 
     counter = 0
+    # Iterate through kPoints  and make kcenters
     for file in pointsInfo:
         numofpoints = file[1][1]
         centerIndex = file[0]
@@ -116,3 +117,4 @@ if __name__ == "__main__":
             writer.writerows(result)
         counter = counter + 1
     sc.stop()
+ 

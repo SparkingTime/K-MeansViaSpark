@@ -1,6 +1,6 @@
 ### K-Means Clustering on large Geo data via Spark
 
----------
+--------- 
 
     @SeedofWind @Cogle @Mengnalin
 
@@ -80,20 +80,33 @@ We choose Spark
 
 ----
 
-######Step1- Understanding Parallel Data Processing and Persisting RDDs
+#####Step1- Understanding Parallel Data Processing and Persisting RDDs
 ----
 Spark is fast. At the core of Spark's speed lies the RDD. In this section we will exam the resilient distributed dataset(RDD), and 
 look at how this abstraction is responsible for the large performance differences that exist between Spark and Hadoop.  
 
 Our first step is to understand what an RDD is. At a high level an RDD is an **immutable** distributed collection of objects. Spark, like Hadoop MapReduce, is a way of computing data on a distributed computing system. When an RDD is created in Spark it is created such that it is **partionable**; this means that when running a task Spark can split up an RDD and distributed it across various compute nodes within the cluster. For those that are familiar with Hadoop this may not seem like a revolutionary idea, MapReduce based off a similar idea. The difference between the two lies in how the data is stored. 
 
+In Spark the RDD allows the the program to **cache** a particular partion on a node. This __peristance__ of data allows us to reuse data over and over in our operations. This persistance of data allows us to implement iterative algorithms with ease. Instead of being bottlenecked by I/O operations and the associated network throughput to transfer large quanities of data it can all be stored on a node and reused. This is a key difference from the Hadoop MapReduce ideology. In MapReduce everything must be written out to a file.; this involves large amounts of network traffic as data must be transported across the network. In addition I/O operation are notoriously slow so elminating these operations speeds up our time tremendously.  
 
-
-######Step2- Understanding and Implementing k-means
+#####Step2- Understanding and Implementing k-means
 ----
 
-######step3- Compute and Visulize 
+#####step3- Compute and Visulize 
+
+Here, we present our clustering and visulization results for *Sample Geo, Device LOcation, and DBpedia data*
 -----
+
+######part@2-Synthetic Data
+
+*Cluster and Visualize the [Syntheic Geo data](./step3.input/step2.sample_geo.csv)*
+
+This converges nicely with a converge distance 0.1 (unlike the global data that contain points seperates further apart). We clustered it into 4 clusters (k=4). The output (divided to 4 files and 1 center file) can be seen [here](./MileStone3/step3.input)
+
+Following is the visulization. A more detailed 
+
+![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.ouput/%402.SyntheticLocationVisulization.png "Clustering Illustration")
+
 
 ######Step4- Runtime Analysis
 
