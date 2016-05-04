@@ -109,6 +109,27 @@ In Spark the RDD allows the the program to **cache** a particular partion on a n
 * In each part, we will first present our data and visulization for each k and each distance measure then conclude with a breif summary
 
 
+
+######part@1-Device Data
+
+*Cluster and Visualize the [Device Status data](./step3.Input/filteredStatus.csv)*
+
+1.  k = 5 DistanceMethod = GreateCircle
+
+    The output (divided to 5 files and 1 center file) can be seen [here](https://github.com/SparkingTime/K-MeansViaSpark/tree/master/MileStone3/step3.Output/%401.DeviceLocationDataClusters_GreateCircle)
+    
+    Following is the visulization. A more detailed plot(full-featured interactive explore) can be found [here](https://)
+    
+    ![alt text](https://github.cparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%402.SyntheticLocationVisulization.png "Device Status clustering")
+
+2.  k = 5 DistanceMethod = Euclidean
+
+    The output (divided to 5 files and 1 center file) can be seen [here](https://github.com/SparkingTime/K-MeansViaSpark/tree/master/MileStone3/step3.Output/%401.DeviceLocationDataClusters_Euclidian)
+    
+    Following is the visulization. A more detailed plot(full-featured interactive explore) can be found [here](https://plot.ly/445/%7Eseazzal/)
+    
+    ![alt text](https://github.comarkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%402.SyntheticLocationVisulization.png "Device Status clustering")
+
 ######part@2-Synthetic Data
 
 *Cluster and Visualize the [Syntheic Geo data](./step3.input/step2.sample_geo.csv)*
@@ -124,11 +145,99 @@ K-means clustering on this data converges nicely with a converge distance 0.1 (u
     ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%402.SyntheticLocationVisulization.png "Syntheic Geo clustering")
 
 2.  k = 4 DistanceMethod = Euclidean
+
     The output (divided to 4 files and 1 center file) can be seen [here](https://github.com/SparkingTime/K-MeansViaSpark/tree/master/MileStone3/step3.Output/%401.DeviceLocationDataClusters_GreateCircle)
     
     Following is the visulization. A more detailed plot(full-featured interactive explore) can be found [here](https://plot.ly/445/%7Eseedbazzal/)
     
     ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%402.SyntheticLocationVisulization.png "Syntheic Geo clustering")
+
+######part@3-DBpedia Data
+
+*Cluster and Visualize the [DBpedia data](./step3.filteredAll.csv)*
+
+K-means clustering on this data converges nicely with a converge distance 0.1 (unlike the global data that contain points seperates further apart). We clustered it into 4 clusters (k=4) via both Euclidean Distance and Greate Circle Distance .
+
+1.  k = 2 DistanceMethod = GreateCircle
+
+    The output (divided to 2 files and 1 center file) can be seen [here](https://github.com/SparkingTime/K-MeansViaSpark/tree/master/MileStone3/step3.Output/%401.GlobalClusters_GreateCircle_k2)
+    
+    Following is the visulization. A more detailed plot(full-featured interactive explore) can be found [here](https://plot.ly/445/%7Eseedbal/)
+    
+    ![alt text](https://github.com/SparkingTime/K-MeansSpark/blob/master/MileStone3/step3.Output/%402.SyntheticLocationVisulization.png "Syntheic Geo clustering")
+
+2.  k = 2 DistanceMethod = Euclidean
+
+    The output (divided to 2 files and 1 center file) can be seen [here](https://github.com/SparkingTime/K-MeansViaSpark/tree/master/MileStone3/step3.Output/%401.GlobalClusters_Euclidian_k2)
+    
+    Following is the visulization. A more detailed plot(full-featured interactive explore) can be found [here](https://plot.ly/445/%7Eseedba/)
+    
+    ![alt text](https://github.com/SparkingTimMeansViaSpark/blob/master/MileStone3/step3.Output/%402.SyntheticLocationVisulization.png "Syntheic Geo clustering")
+    
+3.  k = 3 DistanceMethod = GreateCircle
+
+    The output (divided to 3 files and 1 center file) can be seen [here](https://github.com/SparkingTime/K-MeansViaSpark/tree/master/MileStone3/step3.Output/%401.GlobalClusters_GreateCircle_k3)
+    
+    Following is the visulization. A more detailed plot(full-featured interactive explore) can be found [here](https://plot.ly/445/%7Eseedbazzal/)
+    
+    ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%402.SyntheticLocationVisulization.png "Syntheic Geo clustering")
+
+4.  k = 3 DistanceMethod = Euclidean
+
+    The output (divided to 3 files and 1 center file) can be seen [here](https://github.com/SparkingTime/K-MeansViaSpark/tree/master/MileStone3/step3.Output/%401.GlobalClusters_Euclidian_k3)
+    
+    Following is the visulization. A more detailed plot(full-featured interactive explore) can be found [here](https://plot.ly/445/%7Eseedbazzal/)
+    
+    ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%402.SyntheticLocationVisulization.png "Syntheic Geo clustering")
+    
+5.  k = 4 DistanceMethod = GreateCircle
+
+    The output (divided to 4 files and 1 center file) can be seen [here](https://github.com/SparkingTime/K-MeansViaSpark/tree/master/MileStone3/step3.Output/%401.GlobalClusters_GreateCircle_k4)
+    
+    Following is the visulization. A more detailed plot(full-featured interactive explore) can be found [here](https://plot.ly/445/%7Eseedbazzal/)
+    
+    ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%402.SyntheticLocationVisulization.png "Syntheic Geo clustering")
+
+6.  k = 4 DistanceMethod = Euclidean
+
+    The output (divided to 4 files and 1 center file) can be seen [here](https://github.com/SparkingTime/K-MeansViaSpark/tree/master/MileStone3/step3.Output/%401.GlobalClusters_Euclidian_k4)
+    
+    Following is the visulization. A more detailed plot(full-featured interactive explore) can be found [here](https://plot.ly/445/%7Eseedbazzal/)
+    
+    ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%402.SyntheticLocationVisulization.png "Syntheic Geo clustering")
+
+7.  k = 5 DistanceMethod = GreateCircle
+
+    The output (divided to 5 files and 1 center file) can be seen [here](https://github.com/SparkingTime/K-MeansViaSpark/tree/master/MileStone3/step3.Output/%401.GlobalClusters_GreateCircle_k5)
+    
+    Following is the visulization. A more detailed plot(full-featured interactive explore) can be found [here](https://plot.ly/445/%7Eseedbazzal/)
+    
+    ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%402.SyntheticLocationVisulization.png "Syntheic Geo clustering")
+
+8.  k = 5 DistanceMethod = Euclidean
+
+    The output (divided to 5 files and 1 center file) can be seen [here](https://github.com/SparkingTime/K-MeansViaSpark/tree/master/MileStone3/step3.Output/%401.GlobalClusters_Euclidian_k5)
+    
+    Following is the visulization. A more detailed plot(full-featured interactive explore) can be found [here](https://plot.ly/445/%7Eseedbazzal/)
+    
+    ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%402.SyntheticLocationVisulization.png "Syntheic Geo clustering")
+
+9.  k = 6 DistanceMethod = GreateCircle
+
+    The output (divided to 6 files and 1 center file) can be seen [here](https://github.com/SparkingTime/K-MeansViaSpark/tree/master/MileStone3/step3.Output/%401.GlobalClusters_GreateCircle_k6)
+    
+    Following is the visulization. A more detailed plot(full-featured interactive explore) can be found [here](https://plot.ly/445/%7Eseedbazzal/)
+    
+    ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%402.SyntheticLocationVisulization.png "Syntheic Geo clustering")
+
+10.  k = 6 DistanceMethod = Euclidean
+
+    The output (divided to 6 files and 1 center file) can be seen [here](https://github.com/SparkingTime/K-MeansViaSpark/tree/master/MileStone3/step3.Output/%401.GlobalClusters_Euclidian_k6)
+    
+    Following is the visulization. A more detailed plot(full-featured interactive explore) can be found [here](https://plot.ly/445/%7Eseedbazzal/)
+    
+    ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%402.SyntheticLocationVisulization.png "Syntheic Geo clustering")
+
 
 ---
 
