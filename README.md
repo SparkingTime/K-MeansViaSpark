@@ -95,6 +95,10 @@ In Spark the RDD allows the the program to **cache** a particular partion on a n
 ######step3- Compute and Visulize 
 -----
 
+#######part@2-Synthetic Data
+![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.ouput/%402.SyntheticLocationVisulization.png "Clustering Illustration")
+
+
 ######Step4- Runtime Analysis
 
 ----
