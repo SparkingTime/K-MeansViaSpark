@@ -114,7 +114,7 @@ In Spark the RDD allows the the program to **cache** a particular partion on a n
 
 *Cluster and Visualize the [Device Status data](./step3.Input/filteredStatus.csv)*
 
-1.  k = 5 DistanceMethod = GreateCircle
+1.  k = 5 DistanceMethod = GreatCircle
 
     The output (divided to 5 files and 1 center file) can be seen [here](https://github.com/SparkingTime/K-MeansViaSpark/tree/master/MileStone3/step3.Output/%401.DeviceLocationDataClusters_GreateCircle)
     
@@ -136,7 +136,7 @@ In Spark the RDD allows the the program to **cache** a particular partion on a n
 
 K-means clustering on this data converges nicely with a converge distance 0.1 (unlike the global data that contain points seperates further apart). We clustered it into 4 clusters (k=4) via both Euclidean Distance and Greate Circle Distance .
 
-1.  k = 4 DistanceMethod = GreateCircle
+1.  k = 4 DistanceMethod = GreatCircle
 
     The output (divided to 4 files and 1 center file) can be seen [here](https://github.com/SparkingTime/K-MeansViaSpark/tree/master/MileStone3/step3.Output/%401.DeviceLocationDataClusters_GreateCircle)
     
@@ -158,7 +158,7 @@ K-means clustering on this data converges nicely with a converge distance 0.1 (u
 
 K-means clustering on this data converges nicely with a converge distance 0.1 (unlike the global data that contain points seperates further apart). We clustered it into 4 clusters (k=4) via both Euclidean Distance and Greate Circle Distance .
 
-1.  k = 2 DistanceMethod = GreateCircle
+1.  k = 2 DistanceMethod = GreatCircle
 
     The output (divided to 2 files and 1 center file) can be seen [here](https://github.com/SparkingTime/K-MeansViaSpark/tree/master/MileStone3/step3.Output/%401.GlobalClusters_GreateCircle_k2)
     
@@ -174,7 +174,7 @@ K-means clustering on this data converges nicely with a converge distance 0.1 (u
     
     ![alt text](https://github.com/SparkingTimMeansViaSpark/blob/master/MileStone3/step3.Output/%402.SyntheticLocationVisulization.png "Syntheic Geo clustering")
     
-3.  k = 3 DistanceMethod = GreateCircle
+3.  k = 3 DistanceMethod = GreatCircle
 
     The output (divided to 3 files and 1 center file) can be seen [here](https://github.com/SparkingTime/K-MeansViaSpark/tree/master/MileStone3/step3.Output/%401.GlobalClusters_GreateCircle_k3)
     
@@ -190,7 +190,7 @@ K-means clustering on this data converges nicely with a converge distance 0.1 (u
     
     ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%402.SyntheticLocationVisulization.png "Syntheic Geo clustering")
     
-5.  k = 4 DistanceMethod = GreateCircle
+5.  k = 4 DistanceMethod = GreatCircle
 
     The output (divided to 4 files and 1 center file) can be seen [here](https://github.com/SparkingTime/K-MeansViaSpark/tree/master/MileStone3/step3.Output/%401.GlobalClusters_GreateCircle_k4)
     
@@ -206,7 +206,7 @@ K-means clustering on this data converges nicely with a converge distance 0.1 (u
     
     ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%402.SyntheticLocationVisulization.png "Syntheic Geo clustering")
 
-7.  k = 5 DistanceMethod = GreateCircle
+7.  k = 5 DistanceMethod = GreatCircle
 
     The output (divided to 5 files and 1 center file) can be seen [here](https://github.com/SparkingTime/K-MeansViaSpark/tree/master/MileStone3/step3.Output/%401.GlobalClusters_GreateCircle_k5)
     
@@ -222,7 +222,7 @@ K-means clustering on this data converges nicely with a converge distance 0.1 (u
     
     ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%402.SyntheticLocationVisulization.png "Syntheic Geo clustering")
 
-9.  k = 6 DistanceMethod = GreateCircle
+9.  k = 6 DistanceMethod = GreatCircle
 
     The output (divided to 6 files and 1 center file) can be seen [here](https://github.com/SparkingTime/K-MeansViaSpark/tree/master/MileStone3/step3.Output/%401.GlobalClusters_GreateCircle_k6)
     
