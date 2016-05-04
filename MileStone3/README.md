@@ -35,3 +35,10 @@ Parse the
 X
 * For the report. Is there anyway to analyize the quality of clustering except viewing it?
 * Run-Time Analysis => (1) Clarifying (2) runing on different computers?
+* 
+
+| Program Run Stats        | Time Taken           | 
+| ------------------------ |:--------------------:| 
+| Single Core              | 9min 40secs          | 
+
+
