@@ -72,7 +72,7 @@ if __name__ == "__main__":
     it = 0
     tempDist = float('inf')
     global_min = float('inf')
-    while tempDist > convergeDist and it < 50:
+    while tempDist > convergeDist and it < 70:
         print("<-@@@@@@@@@@@@@@@@@@@@@@-----------------------------------------------------" + "Distance: "+ str(tempDist) + " on iteration "+ str(it) +"------------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@->")
         if(DistanceMethod == "Euclidean"):
             closest = data.map(mapEuclidean)

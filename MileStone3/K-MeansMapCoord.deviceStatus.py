@@ -15,8 +15,8 @@ from haversine import haversine as hv
 def generateVector(line):
     result = []
     linewords = line.split(',')
-    result.append(float(linewords[0]))
-    result.append(float(linewords[1]))
+    result.append(float(linewords[-2]))
+    result.append(float(linewords[-1]))
     return np.array(result)
 
 
@@ -72,7 +72,7 @@ if __name__ == "__main__":
     it = 0
     tempDist = float('inf')
     global_min = float('inf')
-    while tempDist > convergeDist and it < 50:
+    while tempDist > convergeDist and it < 100:
         print("<-@@@@@@@@@@@@@@@@@@@@@@-----------------------------------------------------" + "Distance: "+ str(tempDist) + " on iteration "+ str(it) +"------------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@->")
         if(DistanceMethod == "Euclidean"):
             closest = data.map(mapEuclidean)
