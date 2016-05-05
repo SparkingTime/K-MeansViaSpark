@@ -95,7 +95,7 @@ Our first step is to understand what an RDD is. At a high level an RDD is an **i
 
 In Spark the RDD allows the the program to **cache** a particular partion on a node. This __peristance__ of data allows us to reuse data over and over in our operations. This persistance of data allows us to implement iterative algorithms with ease. Instead of being bottlenecked by I/O operations and the associated network throughput to transfer large quanities of data it can all be stored on a node and reused. This is a key difference from the Hadoop MapReduce ideology. In MapReduce everything must be written out to a file.; this involves large amounts of network traffic as data must be transported across the network. In addition I/O operation are notoriously slow so elminating these operations speeds up our time tremendously. 
 
-----
+
 
 #####Step2- Understanding and Implementing k-means
 
@@ -111,8 +111,9 @@ Here we implement a function to retrieve latitude and longitude of every record 
 * For K-means on DBPedia Data, we run throuhg k=2, k=3, k=4, k=5 , k=6 to understand which cluster number clustering the data better. Also for each k, we run K-means using GreateCircle and Euclidean distance measure
 * In each part, we will first present our data and visulization for each k and each distance measure then conclude with a breif summary
 
-
-
+* **TWO IMPORTANT NOTES**
+ * Since the datas for Device Location and DBpedia is very large, during the visulization of each cluster, we randomly        sample 0.1 of the points in the cluster
+ * For centers_comparison plot, trace0 is centers computed from Euclidean method while trace1 is from Greatcircle(Diamond     Shape)
 ######part@1-Device Data
 
 *Cluster and Visualize the [Device Status data](./step3.Input/filteredStatus.csv)*
