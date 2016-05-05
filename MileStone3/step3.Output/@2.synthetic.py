@@ -161,7 +161,7 @@ trace5 = [dict(
 
 layout = dict(
 
-    title='Step3.Visulization',
+    title='SyntheticLocation Clustering via ' + method,
 
     geo=dict(
 
@@ -176,10 +176,30 @@ layout = dict(
     ),
 )
 
+layout_center = dict(
+
+    title='SyntheticLocation Clustering centers Comparision Euclidean vs GreatCircle' ,
+
+    geo=dict(
+
+        scope='usa',
+        projection=dict(type='albers usa'),
+        showland=True,
+        landcolor="rgb(250, 250, 250)",
+        subunitcolor="rgb(217, 217, 217)",
+        countrycolor="rgb(217, 217, 217)",
+        countrywidth=0.5,
+        subunitwidth=0.5
+    ),
+)
+
+
+
+
 #fig = dict(data=trace1, layout=layout)
 #fig_ = dict(data=trace2, layout=layout)
 fig = dict(data=trace1 + trace2 + trace3 + trace4 + trace5, layout=layout)
-fig1 = dict(data= trace_center1 +trace_center2, layout=layout)
+fig1 = dict(data= trace_center1 +trace_center2, layout=layout_center)
 #url = py.plot(fig_wtf, validate=False, filename='all')
 #url = py.plot(fig, validate=False, filename='all')
 #url = py.plot(fig_, validate=False, filename='usa')
