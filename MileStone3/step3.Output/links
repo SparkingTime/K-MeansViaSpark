@@ -1,3 +1,23 @@
+SampleGeo_GreateCircle
+https://plot.ly/~seedbazzal/465/syntheticlocation-clustering-via-greatecircle/
+
+SampleGeo_Euclidian
+https://plot.ly/~seedbazzal/449/syntheticlocation-clustering-via-euclidean/
+
+SampleGeo_Centers
+https://plot.ly/~seedbazzal/451/syntheticlocation-clustering-centers-comparision-euclidean-vs-greatcircle/
+
+
+DeviceStatus_Centers
+https://plot.ly/~seedbazzal/459/devicestatus-k-5-clustering-centers-comparision-euclidean-vs-great-circle/
+
+DeviceStauts_GreateCircle
+https://plot.ly/~seedbazzal/463/devicestatus-k-5-clustering-via-greatecircle/
+
+
+DeviceStatus_Euclidiean
+https://plot.ly/~seedbazzal/461/devicestatus-k-5-clustering-via-euclidian/
+
 all_k=6_greateCircle
 https://plot.ly/~seedbazzal/457/all-data-visulization-k-6-via-greatecircle/
 
