@@ -280,7 +280,7 @@ The Run Time Analysis utilized the following command in order to determine the e
 | Triple Core              | 3 min 02 secs          | 
 | Quad Core                | 3 min 02 secs          |
 | Penta Core               | 3 min 01 secs          |
-
+| Not Caching              | Not progressing after waiting for 15 min|
 *__Averaged over 5 Runs__
 
 
@@ -315,8 +315,9 @@ Here, we use 3D projection to Visualize our data
 
 ---
 
-![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/extra_3d2.png "All data k =6 Centers")
+![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/extra3d.png "All data k =6 Centers")
 ####Conclusion
 
-
-
+* In this project we have successfully use Spark to implement K-means Clustering on all three data sets
+* Detailed findings and observations can be found in corresponding sections
+* in conclusion, Spark is a nice tool for doing machine learning!
