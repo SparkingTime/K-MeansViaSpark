@@ -291,7 +291,7 @@ The Run Time Analysis utilized the following command in order to determine the e
 
 ===
 
-######Different Initialization
+######Different Initialization centers analysis
 We try to understand whether different initialization will yields different clustering results both in terms of outcome and performance
 
 * trace 0 -- initial 4 points are as farther apart as possible via a greedy algorithm
@@ -300,13 +300,22 @@ We try to understand whether different initialization will yields different clus
 * trace 3 -- random trace
 * trace 4 -- random trace
 
-![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/InitialTests.png "All data k =6 Centers")
+![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/InitialTests.png "Synthetic Location")
 
 **Observations**
 
 * In terms of *Performance*, no significant difference is observed
 * In terms of *outcome*, they are pretty similar
 
+######3D visulization
+
+Here, we use 3D projection to Visualize our data
+
+![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/extra_3d1.png "All data k =6 Centers")
+
+---
+
+![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/extra_3d2.png "All data k =6 Centers")
 ####Conclusion
 
 
