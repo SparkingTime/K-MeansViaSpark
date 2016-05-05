@@ -2,26 +2,25 @@
 import plotly.plotly as py
 import argparse
 import pandas as pd
-
+import plotly.offline as plf
 
 parser = argparse.ArgumentParser()
 parser.add_argument("Dmethod", help=" name of jar file", type=str)
 args = parser.parse_args()
 method = args.Dmethod
 
-datapath = "@3.GlobalClusters_" + method+"_k6"
+datapath = "@3.GlobalClusters_" + method+"_k5"
 df_cluster1 = pd.read_csv(datapath + "/cluster_0.csv")
 df_cluster2 = pd.read_csv(datapath + "/cluster_1.csv")
 df_cluster3 = pd.read_csv(datapath + "/cluster_2.csv")
 df_cluster4 = pd.read_csv(datapath + "/cluster_3.csv")
 df_cluster5 = pd.read_csv(datapath + "/cluster_4.csv")
-df_cluster6 = pd.read_csv(datapath + "/cluster_5.csv")
 df_centers = pd.read_csv(datapath + "/cluster_centers.csv")
 df_centers1 = pd.read_csv(
-    "@3.GlobalClusters_Euclidian_k6/cluster_centers.csv")
+    "@3.GlobalClusters_Euclidian_k5/cluster_centers.csv")
 
 df_centers2 = pd.read_csv(
-    "@3.GlobalClusters_GreateCircle_k6/cluster_centers.csv")
+    "@3.GlobalClusters_GreateCircle_k5/cluster_centers.csv")
 
 
 
@@ -30,7 +29,7 @@ df_cluster2 = df_cluster2.sample(frac=0.05, replace=True)
 df_cluster3 = df_cluster3.sample(frac=0.05, replace=True)
 df_cluster4 = df_cluster4.sample(frac=0.05, replace=True)
 df_cluster5 = df_cluster5.sample(frac=0.05, replace=True)
-df_cluster6 = df_cluster6.sample(frac=0.05, replace=True)
+
 
 
 scl = [[0, "rgb(5, 10, 172)"], [0.35, "rgb(40, 60, 190)"], [0.5, "rgb(70, 100, 245)"],
@@ -166,25 +165,8 @@ trace5 = [dict(
         )
 
     ))]
-trace6 = [dict(
-    type='scattergeo',
-    lat=df_cluster6['Lat'],
-    lon=df_cluster6['Lon'],
-    # text=df_all['Id'],
-    mode='markers',
-    marker=dict(
-        size=3,
-        opacity=0.5,
-        reversescale=True,
-        autocolorscale=False,
-        color=u'rgb(228,26,28)',
-        line=dict(
-            width=0.5,
-            color=u'rgb(228,26,28)'
-        )
 
-    ))]
-trace7 = [dict(
+trace6 = [dict(
     type='scattergeo',
     lat=df_centers['Lat'],
     lon=df_centers['Lon'],
@@ -205,11 +187,11 @@ trace7 = [dict(
 
 layout = dict(
 
-    title='All data Visulization k = 6 via '+ method,
+    title='All data Visulization k = 5 via '+ method,
 
     geo=dict(
 
-        projection=dict(type='Miller'),
+        projection=dict(type='orthographic'),
         showland=True,
         landcolor="rgb(250, 250, 250)",
         subunitcolor="rgb(217, 217, 217)",
@@ -221,11 +203,11 @@ layout = dict(
 
 layout_center = dict(
 
-    title='All data Visulization k = 6 centers comparision Euclidian vs GreateCircle',
+    title='All data Visulization k = 5 centers comparision Euclidian vs GreateCircle',
 
     geo=dict(
 
-        projection=dict(type='Miller'),
+        projection=dict(type='orthographic'),
         showland=True,
         landcolor="rgb(250, 250, 250)",
         subunitcolor="rgb(217, 217, 217)",
@@ -238,11 +220,11 @@ layout_center = dict(
 
 #fig = dict(data=trace1, layout=layout)
 #fig_ = dict(data=trace2, layout=layout)
-fig = dict(data=trace1 + trace2 + trace3 + trace4 + trace5+trace6+trace7, layout=layout)
+fig = dict(data=trace1 + trace2 + trace3 + trace4 + trace5+trace6, layout=layout)
 fig1 = dict(data= trace_center1 +trace_center2, layout=layout_center)
 #url = py.plot(fig_wtf, validate=False, filename='all')
 #url = py.plot(fig, validate=False, filename='all')
 #url = py.plot(fig_, validate=False, filename='usa')
 
-url = py.plot(fig, validate=False, filename='All_k=6'+method)
-url = py.plot(fig1, validate=False, filename='All_k=6_Cluster_Centers')
+plf.plot(fig, validate=False, filename='All_k=5'+method)
+plf.plot(fig1, validate=False, filename='All_k=5_Cluster_Centers')
