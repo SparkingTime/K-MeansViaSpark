@@ -73,7 +73,10 @@ K-means in a "mapreduce" context is a little bit more invovled but goes as follo
 
 ####Spark Implementation (Python Wrapper)
 
-We choose Spark 
+We choose Spark because compared to tool like hadoop, it is much better platform to do machine learning. We can easily reuse the data from one job by reading it directly from the cache. How Spark achived this **will be discussed in detail** in later section.
+Moreover, Spark is a important tool to learn, since essentially, it is more general, more flexible and no offense, better than hadoop mapreduce in almost every measure except legacy reaons.
+
+Specifically, we use the python wrapper to interact with spark. THis is because we are more famialiar with python compared to scala. While funcional language is something on my list to learn. For now, i ma gonna stay in my comfort zone.
 
 ===============
 
