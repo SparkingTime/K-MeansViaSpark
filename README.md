@@ -171,7 +171,7 @@ K-means clustering on this data converges nicely with a converge distance 0.1 (u
 
 K-means clustering on this data converges nicely with a converge distance 0.1 (unlike the global data that contain points seperates further apart). We clustered it into 4 clusters (k=4) via both Euclidean Distance and Greate Circle Distance .
 
-1.1  k = 2 DistanceMethod = GreatCircle
+1.  k = 2 DistanceMethod = GreatCircle
 
 
     
@@ -224,7 +224,9 @@ K-means clustering on this data converges nicely with a converge distance 0.1 (u
 
     ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%402.SyntheticLocationVisulization.png "Syntheic Geo clustering")
 
-
+*  Two-methods Centers Comparision
+    
+   ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%403.All_k%3D6_Cluster_Centers.png "Syntheic Geo clustering")
 ---
 
 ######Step4- Runtime Analysis
