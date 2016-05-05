@@ -286,6 +286,27 @@ The Run Time Analysis utilized the following command in order to determine the e
 
 ----
 
+
+####Extra Analysis
+
+===
+
+######Different Initialization
+We try to understand whether different initialization will yields different clustering results both in terms of outcome and performance
+
+* trace 0 -- initial 4 points are as farther apart as possible via a greedy algorithm
+* trace 1 -- initial 4 points are as farther apart as possible handpicked
+* trace 2 -- random trace
+* trace 3 -- random trace
+* trace 4 -- random trace
+
+![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/InitialTests.png "All data k =6 Centers")
+
+**Observations**
+
+* In terms of *Performance*, no significant difference is observed
+* In terms of *outcome*, they are pretty similar
+
 ####Conclusion
 
 
