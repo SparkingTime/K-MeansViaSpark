@@ -171,7 +171,7 @@ K-means clustering on this data converges nicely with a converge distance 0.1 (u
 
 K-means clustering on this data converges nicely with a converge distance 0.1 (unlike the global data that contain points seperates further apart). We clustered it into 4 clusters (k=4) via both Euclidean Distance and Greate Circle Distance .
 
-1.  k = 2 DistanceMethod = GreatCircle
+1.1  k = 2 DistanceMethod = GreatCircle
 
 
     
@@ -218,18 +218,10 @@ K-means clustering on this data converges nicely with a converge distance 0.1 (u
 
 9.  k = 6 DistanceMethod = GreatCircle
 
-    The output (divided to 6 files and 1 center file) can be seen [here](https://github.com/SparkingTime/K-MeansViaSpark/tree/master/MileStone3/step3.Output/%401.GlobalClusters_GreateCircle_k6)
-    
-    Following is the visulization. A more detailed plot(full-featured interactive explore) can be found [here](https://plot.ly/445/%7Eseedbazzal/)
-    
-    ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%402.SyntheticLocationVisulization.png "Syntheic Geo clustering")
+    ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%403.All_k%3D6Euclidian.png "All data k =6 GreatCircle")
 
 10.  k = 6 DistanceMethod = Euclidean
 
-    The output (divided to 6 files and 1 center file) can be seen [here](https://github.com/SparkingTime/K-MeansViaSpark/tree/master/MileStone3/step3.Output/%401.GlobalClusters_Euclidian_k6)
-    
-    Following is the visulization. A more detailed plot(full-featured interactive explore) can be found [here](https://plot.ly/445/%7Eseedbazzal/)
-    
     ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%402.SyntheticLocationVisulization.png "Syntheic Geo clustering")
 
 
