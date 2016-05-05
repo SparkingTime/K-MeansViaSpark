@@ -1,8 +1,3 @@
-##To do
-*  Visulization of geo (euclidean)
-*  VIsulization of deviceStatus
-*  All data?
-*  Run time analysis no cache
 
 ## K-Means Clustering on large Geo data via Spark
 
@@ -108,9 +103,10 @@ Here we implement a function to retrieve latitude and longitude of every record 
 
 * Here, we present our clustering and visulization results for **Sample Geo, Device LOcation, and DBpedia data**. For each    data, we cluster it by GreatCircle Distance and Euclidean distance to understand which generates a better clustering (in    theory, GreatCircle Distance is a more accurate measurement). 
 
-* **TWO IMPORTANT NOTES**
+* **Three IMPORTANT NOTES**
  * Since the datas for Device Location and DBpedia is very large, during the visulization of each cluster, we randomly        sample 0.1 of the points in the cluster
  * For centers_comparison plot, trace0 is centers computed from Euclidean method while trace1 is from Greatcircle(Diamond     Shape)
+ * All converge Distance is set to be 0.1km
  
 * For each k value, we will present visulization via both distance Methods, namely GreatCircle and Euclidean, and also a      plot comparing the final centers derived from two methods
 
@@ -121,6 +117,7 @@ Here we implement a function to retrieve latitude and longitude of every record 
  
  **Cluster and Visualize the [Device Status data](./step3.Input/filteredStatus.csv)**
 
+====
 
 1.  k = 5 DistanceMethod = GreatCircle
 
@@ -142,9 +139,16 @@ Here we implement a function to retrieve latitude and longitude of every record 
     Following is the visulization. A more detailed plot(full-featured interactive explore) can be found [here](https://plot.ly/~seedbazzal/459/devicestatus-k-5-clustering-centers-comparision-euclidean-vs-great-circle/)   
    ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%401.DeviceStatus_k%3D5_centers.png "Device Status clustering")
 
+* Summary
+  In the visulization of the clustering via two methods, we can find data points are clustered differently via two distance measure. However, both returns logical clustering. One might argue that GreatCircle, in this particular case did a better job in the sense that the yellow cluster is more centered. However,it is not consistant that GreatCircle always yields better clustering (can be seen in the later sections)
+
+---
+
 ######part@2-Synthetic Data
 
 *Cluster and Visualize the [Syntheic Geo data](./step3.input/step2.sample_geo.csv)*
+
+====
 
 K-means clustering on this data converges nicely with a converge distance 0.1 (unlike the global data that contain points seperates further apart). We clustered it into 4 clusters (k=4) via both Euclidean Distance and Greate Circle Distance .
 
@@ -167,11 +171,20 @@ K-means clustering on this data converges nicely with a converge distance 0.1 (u
     Following is the visulization. A more detailed plot(full-featured interactive explore) can be found [here](https://plot.ly/~seedbazzal/459/devicestatus-k-5-clustering-centers-comparision-euclidean-vs-great-circle/)   
    ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%401.DeviceStatus_k%3D5_centers.png "Device Status clustering")
 
+* Summary
+  K-means clustering on this data converges nicely with a converge distance 0.1 in only 5 iterations (unlike the global data that contain points seperates further apart). We clustered it into 4 clusters (k=4) via both Euclidean Distance and Greate Circle Distance. It is clear that in this case, both methods yields very similar result and both did a great job in terms of clustering.
+  
+  
+
+---
+
 ######part@3-DBpedia Data
 
 *Cluster and Visualize the [DBpedia data](./step3.filteredAll.csv)*
 
-K-means clustering on this data converges nicely with a converge distance 0.1 (unlike the global data that contain points seperates further apart). We clustered it into 4 clusters (k=4) via both Euclidean Distance and Greate Circle Distance .
+====
+
+
 
 1.  k = 2 DistanceMethod = GreatCircle
 
@@ -242,6 +255,16 @@ K-means clustering on this data converges nicely with a converge distance 0.1 (u
 * Two-methods Centers Comparision
 
    ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%403.All_k%3D6_Cluster_Centers.png "All data k =6 Centers")
+
+============
+
+**Summary**
+Several interesting findings from this large data set. 
+* k = 2 to 4 takes longer iterations (40-70) to conerge since points tend to more farther apart
+* k = 6 is arguebaly the best clusters value (while 5 is also pretty good)
+* We can see that GreatCircle measurment is not giving us a better result compared to simple Euclidean calculation
+* **IN GENERAL**, Euclidean measurement concerges quicker
+
 ---
 
 ######Step4- Runtime Analysis
@@ -262,6 +285,7 @@ The Run Time Analysis utilized the following command in order to determine the e
 
 
 ----
+
 ####Conclusion
 
 
