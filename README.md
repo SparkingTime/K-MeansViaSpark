@@ -313,7 +313,7 @@ Here, we use 3D projection to Visualize our data
 
 ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/extra_3d1.png "All data k =6 Centers")
 
----
+====
 
 ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/extra3d.png "All data k =6 Centers")
 
