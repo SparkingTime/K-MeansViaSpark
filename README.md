@@ -119,19 +119,23 @@ Here we implement a function to retrieve latitude and longitude of every record 
 
 1.  k = 5 DistanceMethod = GreatCircle
 
-    The output (divided to 5 files and 1 center file) can be seen [here](https://github.com/SparkingTime/K-MeansViaSpark/tree/master/MileStone3/step3.Output/%401.DeviceLocationDataClusters_GreateCircle)
+    The output (divided to 5 files and 1 center file) can be seen [here](https://github.com/SparkingTime/K-MeansViaSpark/tree/master/MileStone3/step3.Output)
     
-    Following is the visulization. A more detailed plot(full-featured interactive explore) can be found [here](https://)
+    Following is the visulization. A more detailed plot(full-featured interactive explore) can be found [here](https://plot.ly/~seedbazzal/463/devicestatus-k-5-clustering-via-greatecircle/)
     
-    ![alt text](https://github.cparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%402.SyntheticLocationVisulization.png "Device Status clustering")
+    ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%401.DeviceStatus_k%3D5_GreateCircle.png "Device Status clustering GreateCircle")
 
 2.  k = 5 DistanceMethod = Euclidean
 
-    The output (divided to 5 files and 1 center file) can be seen [here](https://github.com/SparkingTime/K-MeansViaSpark/tree/master/MileStone3/step3.Output/%401.DeviceLocationDataClusters_Euclidian)
+    The output (divided to 5 files and 1 center file) can be seen [here](https://github.com/SparkingTime/K-MeansViaSpark/tree/master/MileStone3/step3.Output)
     
-    Following is the visulization. A more detailed plot(full-featured interactive explore) can be found [here](https://plot.ly/445/%7Eseazzal/)
+    Following is the visulization. A more detailed plot(full-featured interactive explore) can be found [here](https://plot.ly/~seedbazzal/461/devicestatus-k-5-clustering-via-euclidian/)
     
-    ![alt text](https://github.comarkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%402.SyntheticLocationVisulization.png "Device Status clustering")
+    ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%401.DeviceStatus_k%3D5_Euclidian.png "Device Status clustering Euclidean")
+
+3. Two-methods Centers Comparision
+    Following is the visulization. A more detailed plot(full-featured interactive explore) can be found [here](https://plot.ly/~seedbazzal/459/devicestatus-k-5-clustering-centers-comparision-euclidean-vs-great-circle/)   
+   ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%401.DeviceStatus_k%3D5_centers.png "Device Status clustering")
 
 ######part@2-Synthetic Data
 
@@ -141,19 +145,22 @@ K-means clustering on this data converges nicely with a converge distance 0.1 (u
 
 1.  k = 4 DistanceMethod = GreatCircle
 
-    The output (divided to 4 files and 1 center file) can be seen [here](https://github.com/SparkingTime/K-MeansViaSpark/tree/master/MileStone3/step3.Output/%401.DeviceLocationDataClusters_GreateCircle)
+    The output (divided to 4 files and 1 center file) can be seen [here](https://github.com/SparkingTime/K-MeansViaSpark/tree/master/MileStone3/step3.Output)
     
-    Following is the visulization. A more detailed plot(full-featured interactive explore) can be found [here](https://plot.ly/445/%7Eseedbazzal/)
+    Following is the visulization. A more detailed plot(full-featured interactive explore) can be found [here](https://plot.ly/~seedbazzal/465/syntheticlocation-clustering-via-greatecircle/)
     
-    ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%402.SyntheticLocationVisulization.png "Syntheic Geo clustering")
+    ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%402.SampleGeoClusteringEuclidian.png "Syntheic Geo clustering GreateCircle")
 
 2.  k = 4 DistanceMethod = Euclidean
 
-    The output (divided to 4 files and 1 center file) can be seen [here](https://github.com/SparkingTime/K-MeansViaSpark/tree/master/MileStone3/step3.Output/%401.DeviceLocationDataClusters_GreateCircle)
+    The output (divided to 4 files and 1 center file) can be seen [here](https://github.com/SparkingTime/K-MeansViaSpark/tree/master/MileStone3/step3.Output)
+    Following is the visulization. A more detailed plot(full-featured interactive explore) can be found [here](https://plot.ly/~seedbazzal/449/syntheticlocation-clustering-via-euclidean/)
     
-    Following is the visulization. A more detailed plot(full-featured interactive explore) can be found [here](https://plot.ly/445/%7Eseedbazzal/)
-    
-    ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%402.SyntheticLocationVisulization.png "Syntheic Geo clustering")
+    ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%402.SampleGeoClusteringEuclidian.png "Syntheic Geo clustering Euclidean")
+
+3. Two-methods Centers Comparision
+    Following is the visulization. A more detailed plot(full-featured interactive explore) can be found [here](https://plot.ly/~seedbazzal/459/devicestatus-k-5-clustering-centers-comparision-euclidean-vs-great-circle/)   
+   ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%401.DeviceStatus_k%3D5_centers.png "Device Status clustering")
 
 ######part@3-DBpedia Data
 
