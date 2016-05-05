@@ -180,6 +180,11 @@ K-means clustering on this data converges nicely with a converge distance 0.1 (u
 2.  k = 2 DistanceMethod = Euclidean
 
    ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%403.All_k%3D2Euclidian.png "All data k =2 GreateCirlce")
+   
+*  Two-methods Centers Comparision
+   ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%403.All_k%3D2_Cluster_Centers.png "All data k =2 center comparision")    
+
+   
     
 3.  k = 3 DistanceMethod = GreatCircle
 
