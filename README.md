@@ -108,17 +108,19 @@ Here we implement a function to retrieve latitude and longitude of every record 
 
 * Here, we present our clustering and visulization results for **Sample Geo, Device LOcation, and DBpedia data**. For each    data, we cluster it by GreatCircle Distance and Euclidean distance to understand which generates a better clustering (in    theory, GreatCircle Distance is a more accurate measurement). 
 
-* For K-means on DBPedia Data, we run throuhg k=2, k=3, k=4, k=5 , k=6 to understand which cluster number clustering the data better. Also for each k, we run K-means using GreateCircle and Euclidean distance measure
-* In each part, we will first present our data and visulization for each k and each distance measure then conclude with a breif summary
-
 * **TWO IMPORTANT NOTES**
  * Since the datas for Device Location and DBpedia is very large, during the visulization of each cluster, we randomly        sample 0.1 of the points in the cluster
  * For centers_comparison plot, trace0 is centers computed from Euclidean method while trace1 is from Greatcircle(Diamond     Shape)
  
+* For each k value, we will present visulization via both distance Methods, namely GreatCircle and Euclidean, and also a      plot comparing the final centers derived from two methods
+
+* For each part, a brief summary about the observation will be given in the end
+* For DBpedia Data, since we are trying to understand what k gives out better clustering k = 2,3,4,5,6 will be presented and   a discussion about which, from our perspective yields a better clustering will be prestned in the end of the part
 
 ######part@1-Device Data
+ 
+ **Cluster and Visualize the [Device Status data](./step3.Input/filteredStatus.csv)**
 
-*Cluster and Visualize the [Device Status data](./step3.Input/filteredStatus.csv)*
 
 1.  k = 5 DistanceMethod = GreatCircle
 
