@@ -184,37 +184,45 @@ K-means clustering on this data converges nicely with a converge distance 0.1 (u
 3.  k = 3 DistanceMethod = GreatCircle
 
 
-   ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%403.All_k%3D2Euclidian.png "All data k =2 GreateCirlce")
+   ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%403.All_k%3D3_GreateCircle.png "All data k =3 GreateCirlce")
     
 
 4.  k = 3 DistanceMethod = Euclidean
 
 
-   ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%403.All_k%3D2Euclidian.png "All data k =2 GreateCirlce")
-    
+   ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%403.All_k%3D3_Euclidean.png "All data k =3 Euclidean")
+
+*  Two-methods Centers Comparision
+   ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%403.All_k%3D3_Centers.png "All data k =3 center comparision")    
     
 5.  k = 4 DistanceMethod = GreatCircle
 
 
-   ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%403.All_k%3D2Euclidian.png "All data k =2 GreateCirlce")
+   ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%403.All_k%3D4_GreateCircle.png "All data k =4 GreateCirlce")
     
 
 6.  k = 4 DistanceMethod = Euclidean
 
 
-   ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%403.All_k%3D2Euclidian.png "All data k =2 GreateCirlce")
+   ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%403.All_k%3D4_Euclidean.png "All data k =4 GreateCirlce")
     
+*  Two-methods Centers Comparision
+   ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%403.All_k%3D4_Centers.png "All data k =4 center comparision")    
 
 7.  k = 5 DistanceMethod = GreatCircle
 
 
-   ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%403.All_k%3D2Euclidian.png "All data k =2 GreateCirlce")
+   ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%403.All_k%3D5_GreatCircle.png "All data k =5 GreateCirlce")
+   
+   ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%403.All_k%3D5_GreatCircleFlat.png "All data k =5 GreateCirlce")
     
 8.  k = 5 DistanceMethod = Euclidean
 
 
-   ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%403.All_k%3D2Euclidian.png "All data k =2 GreateCirlce")
+   ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%403.All_k%3D5_Euclidean.png "All data k =5 Euclidiean")
     
+*  Two-methods Centers Comparision
+   ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%403.All_k%3D5_Centers.png "All data k =5 center comparision")
 
 9.  k = 6 DistanceMethod = GreatCircle
 
@@ -222,11 +230,11 @@ K-means clustering on this data converges nicely with a converge distance 0.1 (u
 
 10.  k = 6 DistanceMethod = Euclidean
 
-    ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%403.All_k%3D6Euclidian.png "Syntheic Geo clustering")
+    ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%403.All_k%3D6Euclidian.png "All data k =6 Euclidean")
 
 * Two-methods Centers Comparision
 
-   ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%403.All_k%3D6_Cluster_Centers.png "Syntheic Geo clustering")
+   ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%403.All_k%3D6_Cluster_Centers.png "All data k =6 Centers")
 ---
 
 ######Step4- Runtime Analysis
