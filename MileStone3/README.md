@@ -3,38 +3,22 @@
 
 
 ##Goals
-  * [ ] Step1=>DeviceStatus
+  * [x] Step1=>DeviceStatus
   * [x] Step2=>SampleGeo
-  * [ ] Step3=>Real Data
+  * [x] Step3=>Real Data
   
-##Scripts Lists
+##Scripts Lists 
+  List of important scripts
 
-####[K-MeansMapCoord.py](./K-MeansMapCoord.py)
-####[MapScatterVisulization.py](./MapScatterVisulization.py)
-####[syntheticGeo.MapScatterVisulization](./syntheticGeo.MapScatterVisulization.py)
-####[SampleGeoClustteringVisulizationK=4](https://plot.ly/445/%7Eseedbazzal/)
+#####[K-MeansMapCoord.commented.py](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/K-MeansMapCoord.commented.py)
 
-##Questions For TMR
+A carefully commented script to illustrate our basic implmentation of k-means in spark
 
-----------
+#####[K-MeansMapCoord.py](./K-MeansMapCoord.py)
+#####[MapScatterVisulization.py](./MapScatterVisulization.py)
+#####[syntheticGeo.MapScatterVisulization](./syntheticGeo.MapScatterVisulization.py)
+#####[SampleGeoClustteringVisulizationK=4](https://plot.ly/445/%7Eseedbazzal/)
+#####[step3.Output](https://github.com/SparkingTime/K-MeansViaSpark/tree/master/MileStone3/step3.Output)
 
-* Submission Procedure
-   X 
-
-* Geo-Median methods
-  X
-
-* 3D Visulization for extra credit?
-  X
-
-* *Sample the cluster because of the api limit*
-Parse the 
-
-
-* *Convergence Value* touse
-X
-* For the report. Is there anyway to analyize the quality of clustering except viewing it?
-* Run-Time Analysis => (1) Clarifying (2) runing on different computers?
-* 
-
-
+* Where all outputs located. It is following a very tight naming convention, go in, you will understand what is going on
+* Inside this folder,you can see there is a .py file for each @1/@2/@3 outputs. They are visulization scripts
