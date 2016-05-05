@@ -2,7 +2,7 @@
 import plotly.plotly as py
 import argparse
 import pandas as pd
-
+import plotly.offline as plt
 
 parser = argparse.ArgumentParser()
 parser.add_argument("Dmethod", help=" name of jar file", type=str)
@@ -209,7 +209,7 @@ layout = dict(
 
     geo=dict(
 
-        projection=dict(type='Miller'),
+        projection=dict(type='orthographic' ),
         showland=True,
         landcolor="rgb(250, 250, 250)",
         subunitcolor="rgb(217, 217, 217)",
@@ -244,5 +244,6 @@ fig1 = dict(data= trace_center1 +trace_center2, layout=layout_center)
 #url = py.plot(fig, validate=False, filename='all')
 #url = py.plot(fig_, validate=False, filename='usa')
 
-url = py.plot(fig, validate=False, filename='All_k=6'+method)
-url = py.plot(fig1, validate=False, filename='All_k=6_Cluster_Centers')
+# url = py.plot(fig, validate=False, filename='All_k=6'+method)
+# url = py.plot(fig1, validate=False, filename='All_k=6_Cluster_Centers')
+plt.plot(fig, validate=False, filename='All_k=6'+method)
