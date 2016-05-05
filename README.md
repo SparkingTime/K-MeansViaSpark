@@ -222,10 +222,10 @@ K-means clustering on this data converges nicely with a converge distance 0.1 (u
 
 10.  k = 6 DistanceMethod = Euclidean
 
-    ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%402.SyntheticLocationVisulization.png "Syntheic Geo clustering")
+    ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%403.All_k%3D6Euclidian.png "Syntheic Geo clustering")
 
-*  Two-methods Centers Comparision
-    
+* Two-methods Centers Comparision
+
    ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%403.All_k%3D6_Cluster_Centers.png "Syntheic Geo clustering")
 ---
 
