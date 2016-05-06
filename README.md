@@ -249,7 +249,7 @@ K-means clustering on this data converges nicely with a converge distance 0.1 (u
 
 9.  k = 6 DistanceMethod = GreatCircle
 
-    ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%403.All_k%3D6Euclidian.png "All data k =6 GreatCircle")
+    ![alt text](https://github.com/SparkingTime/K-MeansViaSpark/blob/master/MileStone3/step3.Output/%403.All_k%3D6GreatCircle.png "All data k =6 GreatCircle")
 
 10.  k = 6 DistanceMethod = Euclidean
 
