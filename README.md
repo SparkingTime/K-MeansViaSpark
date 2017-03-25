@@ -5,9 +5,9 @@
 
     @SeedofWind @Cogle @Mengnalin
 
-####Introduction
+#### Introduction
 
-#####What is Clustering
+##### What is Clustering
 -----
 Clustering is the task of grouping a set of objects in such a way that objects in the same cluster are more similar  to each other than to those in other clusters. 
 
@@ -15,13 +15,13 @@ While does not look like a complex problem to solve, it is often considered to b
 
 ![alt text](http://home.deib.polimi.it/matteucc/Clustering/tutorial_html/images/clustering.gif "Clustering Illustration")
 
-#####Goals of Clustering
+##### Goals of Clustering
 ----
 So, the goal of clustering is to determine the intrinsic grouping in a set of unlabeled data. But how to decide what constitutes a good clustering? It can be shown that there is no absolute “best” criterion which would be independent of the final aim of the clustering. Consequently, it is the user which must supply this criterion, in such a way that the result of the clustering will suit their needs.
 For instance, we could be interested in finding representatives for homogeneous groups (data reduction), in finding “natural clusters” and describe their unknown properties (“natural” data types), in finding useful and suitable groupings (“useful” data classes) or in finding unusual data objects (outlier detection).
 
 
-#####Use cases of Clustering
+##### Use cases of Clustering
 ----
 Clustering algorithms can be applied in many fields, for instance:
 
@@ -33,13 +33,13 @@ Clustering algorithms can be applied in many fields, for instance:
 * Earthquake studies: clustering observed earthquake epicenters to identify dangerous zones;
 * WWW: document classification; clustering weblog data to discover groups of similar access patterns.
 
-#####Purpose of this project
+##### Purpose of this project
 ------
 In this project, we implement an iterative algorithm (simple K-means) via **Spark** that solves the clustering problem in a parallel fashion. Details about K-means algorithm and the reason why we chose Spark will be discussed later.
 
 ================
 
-####High-level k-Means Algorithm
+#### High-level k-Means Algorithm
 -----
 As mentioned above, K-means clustering is quite intuitive and straightforward. Here we first introduce the high-level algorithm.
 
@@ -55,13 +55,13 @@ As mentioned above, K-means clustering is quite intuitive and straightforward. H
 
 K-means in a "mapreduce" context is a little bit more invovled but goes as follows.
 
-#####Mapper Phase
+##### Mapper Phase
 * Read the cluster centers into memory from a sequencefile
 * Iterate over each cluster center for each input key/value pair. 
 * Measure the distances and save the nearest center which has the lowest distance to the vector
 * Write the clustercenter with its vector to the filesystem.
 
-#####Reduce Phase
+##### Reduce Phase
 * Iterate over each value vector and calculate the average vector. (Sum each vector and devide each part by the number of vectors we received).
 * This is the new center, save it into a SequenceFile.
 * Check the convergence between the clustercenter that is stored in the key object and the new center.
@@ -71,7 +71,7 @@ K-means in a "mapreduce" context is a little bit more invovled but goes as follo
 
 ================
 
-####Spark Implementation (Python Wrapper)
+#### Spark Implementation (Python Wrapper)
 
 We choose Spark because compared to tool like hadoop, it is much better platform to do machine learning. We can easily reuse the data from one job by reading it directly from the cache. How Spark achived this **will be discussed in detail** in later section.
 Moreover, Spark is a important tool to learn, since essentially, it is more general, more flexible and no offense, better than hadoop mapreduce in almost every measure except legacy reaons.
@@ -80,11 +80,11 @@ Specifically, we use the python wrapper to interact with spark. THis is because 
 
 ===============
 
-####Results & Discussion
+#### Results & Discussion
 
 ----
 
-#####Step1- Understanding Parallel Data Processing and Persisting RDDs
+##### Step1- Understanding Parallel Data Processing and Persisting RDDs
 
 Spark is fast. At the core of Spark's speed lies the RDD. In this section we will exam the resilient distributed dataset(RDD), and 
 look at how this abstraction is responsible for the large performance differences that exist between Spark and Hadoop.  
@@ -95,13 +95,13 @@ In Spark the RDD allows the the program to **cache** a particular partion on a n
 
 
 
-#####Step2- Understanding and Implementing k-means
+##### Step2- Understanding and Implementing k-means
 
 K-means is one of the best known family of clustering algorithms. The heart of the algorithm is the for-loop, in which we consider each point other than the k selected points and assign it to the closest cluster, where closest here closest to the centroid of the cluster. The centroid of the cluster can migrate as points are assigned to it. However, the centroid tends not to move too much because points near the cluster are likely to be assigned. 
 Here we implement a function to retrieve latitude and longitude of every record in the target data. Then we choose k initial cluster centers at random by build-in function takeSample. We create mapper output (key is index of point and value is (index of closest center, 1, point in list format)) by choosing corresponding cluster center that is closest to the point. Reducer output is created by reduceByKey function. Then new cluster center is calculated by average all data in one cluster. Temporary distance is calculated by adding all distances between data and the corresponding cluster centers. If the distance is smaller than the previous one then we just update it. We iterate through while loop until difference between previous distance and current one meet certain condition. We use two methods to calculate distance between two data points( Euclidean Distance and Great Circle Distance) depending on the input. Details can be found [here]:()
 
 
-#####step3- Compute and Visulize 
+##### step3- Compute and Visulize 
 
 
 * Here, we present our clustering and visulization results for **Sample Geo, Device LOcation, and DBpedia data**. For each    data, we cluster it by GreatCircle Distance and Euclidean distance to understand which generates a better clustering (in    theory, GreatCircle Distance is a more accurate measurement). 
@@ -116,7 +116,7 @@ Here we implement a function to retrieve latitude and longitude of every record 
 * For each part, a brief summary about the observation will be given in the end
 * For DBpedia Data, since we are trying to understand what k gives out better clustering k = 2,3,4,5,6 will be presented and   a discussion about which, from our perspective yields a better clustering will be prestned in the end of the part
 
-######part@1-Device Data
+###### part@1-Device Data
  
  **Cluster and Visualize the [Device Status data](./step3.Input/filteredStatus.csv)**
 
@@ -147,7 +147,7 @@ Here we implement a function to retrieve latitude and longitude of every record 
 
 ---
 
-######part@2-Synthetic Data
+###### part@2-Synthetic Data
 
 *Cluster and Visualize the [Syntheic Geo data](./step3.input/step2.sample_geo.csv)*
 
@@ -181,7 +181,7 @@ K-means clustering on this data converges nicely with a converge distance 0.1 (u
 
 ---
 
-######part@3-DBpedia Data
+###### part@3-DBpedia Data
 
 *Cluster and Visualize the [DBpedia data](./step3.filteredAll.csv)*
 
@@ -270,7 +270,7 @@ Several interesting findings from this large data set.
 
 ---
 
-######Step4- Runtime Analysis
+###### Step4- Runtime Analysis
 
 The Run Time Analysis utilized the following command in order to determine the effects of different 
     
@@ -290,11 +290,11 @@ The Run Time Analysis utilized the following command in order to determine the e
 ----
 
 
-####Extra Analysis
+#### Extra Analysis
 
 ===
 
-######Different Initialization centers analysis
+###### Different Initialization centers analysis
 We try to understand whether different initialization will yields different clustering results both in terms of outcome and performance
 
 * trace 0 -- initial 4 points are as farther apart as possible via a greedy algorithm
@@ -310,7 +310,7 @@ We try to understand whether different initialization will yields different clus
 * In terms of *Performance*, no significant difference is observed
 * In terms of *outcome*, they are pretty similar
 
-######3D visulization
+###### 3D visulization
 
 Here, we use 3D projection to Visualize our data
 
@@ -324,7 +324,7 @@ Here, we use 3D projection to Visualize our data
 --------
 ======
 
-####Conclusion
+#### Conclusion
 
 * In this project we have successfully use Spark to implement K-means Clustering on all three data sets
 * Detailed findings and observations can be found in corresponding sections
